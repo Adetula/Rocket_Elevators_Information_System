@@ -1,0 +1,247 @@
+
+		<!-- Quote form -->
+		<section id="quote_form">
+			<div class="container">
+				<header class="text-center mb-60">
+					<h2>Quote Form</h2>
+					<p class="lead font-lato"><em>Please complete this form</em></p>
+					<hr />
+				</header>
+				<div class="row">
+					<div class="col-sm-12">
+						<form action="/quotes" method='post' novalidate>
+							<fieldset>
+								<div class="row">
+									<div class="col-md-4">
+										<label for="contact:name">Contact Full Name *</label>
+										<input id="name" required type="text" value="" class="form-control"
+											name="name" >
+									</div>
+									<div class="col-md-4">
+										<label for="contact:email">E-mail*</label>
+										<input id=email required type="email" value="" class="form-control"
+											name="email" >
+									</div>
+									<div class="col-md-4">
+										<label for="contact:phone">Phone number</label>
+										<input id="phone" type="text" value="" class="form-control" name="phone">
+								</div>
+							</div>
+								<%# <form> %>
+									<label for="building_type">Building Type</label>
+									<select id="building_type" class="form-control pointer" style="width: 200px;"
+										onchange="selectedType(this.value)" name ="building_type">
+										<option selected value="chooseOne">Choose one</option>
+										<option id="residential" value="residential">Residential</option>
+										<option id="commercial" value="commercial">Commercial</option>
+										<option id="corporate" value="corporate">Corporate</option>
+										<option id="hybrid" value="hybrid">Hybrid</option>
+									</select>
+								<%# </form> %>
+
+								<!--RESIDENTIAL MENU-->
+								<div id="residential-div">
+									<div id="number-of-apartments" style="display:none ;"
+										class="form-field-residential">
+										<label>Number of apartments in the building *</label>
+										<input id="numApp" required type="number" class="form-control" min="1"
+											onchange="amountElevators()" name = "number_apartments_residential">
+									</div>
+									<div id="number-of-floors" style="display:none ;" class="form-field-residential">
+										<label for="number-of-floors">Number of floors contained in the building
+											*</label>
+										<input id="numFloors_re" required type="number" class="form-control"
+											name="number_floors_residential" min="1" onchange="amountElevators()">
+									</div>
+									<div id="number-of-basements" style="display:none ;" class="form-field-residential">
+										<label for="numBasements_re">Number of basements contained in the building
+											*</label>
+										<input id="numBasements_re" required type="number" class="form-control"
+											name="number_basements_residential" min="0" onchange="amountElevators()">
+									</div>
+								</div>
+
+								<!--COMMERCIAL MENU-->
+								<div id="commercial-div">
+									<div id="number-of-companies" style="display:none ;" class="form-field-commercial">
+										<label for="numBusinesses_com">Number of distinct businesses *</label>
+										<input id="numBusinesses_com" required type="number" class="form-control"
+											name="number_companies" min="0">
+									</div>
+									<div id="number-of-floors" style="display:none ;" class="form-field-commercial">
+										<label for="numFloors_com">Number of floors contained in the building *</label>
+										<input id="numFloors_com" required type="number" class="form-control"
+											name="number_floors_commercial" min="1">
+									</div>
+									<div id="number-of-basements" style="display:none ;" class="form-field-commercial">
+										<label for="numBasements_com">Number of basements contained in the building
+											*</label>
+										<input id="numBasements_com" required type="number" class="form-control"
+											name="number_basements_commercial" min="0">
+									</div>
+									<div id="number-of-parking-spots" style="display:none ;"
+										class="form-field-commercial">
+										<label for="numParking_com">Number of parking space available *</label>
+										<input id="numParking_com" required type="number" class="form-control"
+											name="number_parking_commercial" min="0">
+									</div>
+									<div id="number-of-elevators" style="display:none ;" class="form-field-commercial">
+										<label for="numShafts">Number of elevator shafts to be deployed *</label>
+										<input id="numShafts" required type="number" class="form-control" onchange="amountElevatorsCom ()" min="0" name="number_elevators">
+									</div>
+								</div>
+
+								<!--CORPORATE MENU-->
+								<div id="corporate-div">
+									<div id="number-of-corporations" style="display:none ;"
+										class="form-field-corporate">
+										<label for="numCompanies">Number of separate tenant companies *</label>
+										<input id="numCompanies" required type="number" class="form-control"
+											name="number_corporate" min="0">
+									</div>
+									<div id="number-of-floors" style="display:none ;" class="form-field-corporate">
+										<label for="numFloors_co">Number of floors contained in the building *</label>
+										<input id="numFloors_co" required type="number" class="form-control"
+											name="number_floors_corporate" min="1" onchange="amountElevatorsCo()">
+									</div>
+									<div id="number-of-basements" style="display:none ;" class="form-field-corporate">
+										<label for="numBasements_co">Number of basements contained in the building
+											*</label>
+										<input id="numBasements_co" required type="number" class="form-control"
+											name="number_basements_corporate" min="0" onchange="amountElevatorsCo()">
+									</div>
+									<div id="number-of-parking-spots" style="display:none ;"
+										class="form-field-corporate">
+										<label for="numParking_co">Number of parking spaces available *</label>
+										<input id="numParking_co" required type="number" class="form-control"
+											name="number_parking_corporate" min="0">
+									</div>
+									<div id="maximum-occupancy" style="display:none ;" class="form-field-corporate">
+										<label for="numMaxOccupants_co">Maximum number of occupants per floor *</label>
+										<input id="numMaxOccupants_co" required type="number" class="form-control"
+											name="number_occupants_corporate" min="0" onchange="amountElevatorsCo()">
+									</div>
+								</div>
+
+								<!--HYBRID MENU-->
+								<div id="hybrid-div">
+									<div id="number-of-companies" style="display:none ;" class="form-field-hybrid">
+										<label for="numBusinesses_hy">Number of distinct businesses *</label>
+										<input id="numBusinesses_hy" required type="number" class="form-control"
+											name="number_of_corporations" min="0">
+									</div>
+									<div id="number-of-floors" style="display:none ;" class="form-field-hybrid">
+										<label for="numFloors_hy">Number of floors contained in the building *</label>
+										<input id="numFloors_hy" required type="number" class="form-control"
+											name="number_floors_hydrid" min="1" onchange="amountElevatorsHy()">
+									</div>
+									<div id="number-of-basements" style="display:none ;" class="form-field-hybrid">
+										<label for="numBasements_hy">Number of basements contained in the building
+											*</label>
+										<input id="numBasements_hy" required type="number" class="form-control"
+											name="number_basements_hybrid" min="0" onchange="amountlevatorsHy()">
+									</div>
+									<div id="number-of-parking-spots" style="display:none ;" class="form-field-hybrid">
+										<label for="numParking_hy">Number of parking spaces available *</label>
+										<input id="numParking_hy" required type="number" class="form-control"
+											name="number_parking_hybrid" min="0">
+									</div>
+									<div id="maximum-occupancy" style="display:none ;" class="form-field-hybrid">
+										<label for="numMaxOccupants_hy">Maximum number of occupants per floor *</label>
+										<input id="numMaxOccupants_hy" required type="number" class="form-control"
+											name="number_occupants_hybrid" onchange="amountElevatorsHy()" min="0">
+									</div>
+									<div id="business-hours" style="display:none ;" class="form-field-hybrid">
+										<label for="numHoursAct">Number of hours of activity of the building (maximum
+											24) *</label>
+										<input id="numHoursAct" required type="number" class="form-control"
+											name="number_hours_act" min="0" max="24">
+									</div>
+								</div>
+
+								<!--RECOMMENDED ELEVATORS-->
+								<div id="elevator-amount">
+									<div style="display:block;">
+										<br>
+										<label>Recommended number of elevators </label>
+										<input id="amount-elevatorsID" type="number" name="elevators_required" class="form-control" readonly>
+										<br>
+									</div>
+								</div>
+
+								<!--QUALITE LEVEL-->
+								<div id="quality-level">
+									<label>Select the level of quality</label>
+									<div class="form-check">
+										<input class="form-check-label" id="standard" type="radio" value="standardValue"
+											name="service_level" onchange=unitPriceFun(value)> Standard
+									</div>
+									<div class="form-check">
+										<input class="form-check-label" id="premium" type="radio" value="premiumValue"
+											name="service_level" onchange=unitPriceFun(value)> Premium
+									</div>
+									<div class="form-check">
+										<input class="form-check-label" id="excelium" type="radio" value="exceliumValue"
+											name="service_level" onchange=unitPriceFun(value)> Excelium
+									</div>
+								</div>
+
+
+
+								<!--BUDGET MENU-->
+								<div id="budget-div">
+									<div id="elevator-unit-price" style="display:block ;">
+										<label><br>Unit price of each elevator</label>
+										<input id="unitePrice" class="form-control" name="elevator_unit_price" readonly>
+									</div>
+									<div id="elevator-total-price" style="display:block ;">
+										<label>Total price of the elevators</label>
+										<input id="totalPrice" class="form-control" name="elevator_total_price" readonly>
+									</div>
+									<div sid="installation-fees" tyle="display:block ;">
+										<label>Installation fees</label>
+										<input id="installationFees" class="form-control" name="installation_fees"
+											readonly>
+									</div>
+									<div id="final-price" style="display:block;">
+										<label>Final price</label>
+										<input id="finalPrice" class="form-control" name="final_price" readonly>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12">
+									<br>
+									<%# <button type="submit" class="btn btn-blue"><i class="fa fa-check"></i> SUBMIT</button> %>
+									<input type="submit" value="Submit">
+								</div>
+						
+								<!--FORM SCRIPT-->
+								<script src="assets/js/quote3.js"></script>
+
+							</fieldset>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- /Quote Form-->
+
+
+
+			<script>
+				$("#my_form").submit(function(event){
+					event.preventDefault(); //prevent default action 
+					var post_url = $(this).attr("action"); //get form action url
+					var request_method = $(this).attr("method"); //get form GET/POST method
+					var form_data = $(this).serialize(); //Encode form elements for submission
+					
+					$.ajax({
+						url : post_url,
+						type: request_method,
+						data : form_data
+					}).done(function(response){ //
+						alert('YOUR SUBMISSION HAVE BEEN RECEIVED');
+						window.location="/";
+					});
+				});
+			</script>
