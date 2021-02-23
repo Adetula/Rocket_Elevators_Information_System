@@ -10,21 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_22_222645) do
-
-  create_table "customers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "customer_user_id"
-    t.date "customer_creation_date"
-    t.string "customer_company_name"
-    t.string "customer_company_hq_address"
-    t.string "customer_full_name_of_company_contact"
-    t.string "customer_company_phone"
-    t.string "customer_company_email"
-    t.text "customer_company_description"
-    t.string "customer_full_name_of_service_technical_authority"
-    t.string "customer_technical_authority_phone"
-    t.string "customer_technical_manager_email"
-  end
+ActiveRecord::Schema.define(version: 2021_02_22_223730) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "address_type"
@@ -36,6 +22,8 @@ ActiveRecord::Schema.define(version: 2021_02_22_222645) do
     t.string "address_zip_code"
     t.string "address_country"
     t.text "address_notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "buildings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -49,75 +37,20 @@ ActiveRecord::Schema.define(version: 2021_02_22_222645) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "employees", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "last_name"
-    t.string "first_name"
-    t.string "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "user_id"
-    t.index ["user_id"], name: "index_employees_on_user_id"
-  end
-
-  create_table "leads", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "full_name_lead"
-    t.string "email_lead"
-    t.string "phone_lead"
-    t.string "company_name_leads"
-    t.string "project_name_leads"
-    t.string "project_description_leads"
-    t.string "department"
-    t.text "message_leads"
-    t.binary "attachment_file_leads", limit: 16777215
+  create_table "customers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "customer_user_id"
+    t.date "customer_creation_date"
+    t.string "customer_company_name"
+    t.string "customer_company_hq_address"
+    t.string "customer_full_name_of_company_contact"
+    t.string "customer_company_phone"
+    t.string "customer_company_email"
+    t.text "customer_company_description"
+    t.string "customer_full_name_of_service_technical_authority"
+    t.string "customer_technical_authority_phone"
+    t.string "customer_technical_manager_email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "quotes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-    t.string "email_quote"
-    t.string "phone"
-    t.string "building_type"
-    t.string "number_apartments_residential"
-    t.string "number_floors_residential"
-    t.string "number_basements_residential"
-    t.string "number_companies"
-    t.string "number_floors_commercial"
-    t.string "number_basements_commercial"
-    t.string "number_parking_commercial"
-    t.string "number_elevators"
-    t.string "number_corporate"
-    t.string "number_floors_corporate"
-    t.string "number_basements_corporate"
-    t.string "number_parking_corporate"
-    t.string "number_occupants_corporate"
-    t.string "number_of_corporations"
-    t.string "number_floors_hydrid"
-    t.string "number_basements_hybrid"
-    t.string "number_parking_hybrid"
-    t.string "number_occupants_hybrid"
-    t.string "number_hours_act"
-    t.string "service_level"
-    t.integer "elevators_required"
-    t.string "elevator_unit_price"
-    t.string "elevator_total_price"
-    t.string "installation_fees"
-    t.string "final_price"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  end
-
-  add_foreign_key "employees", "users"
 end
