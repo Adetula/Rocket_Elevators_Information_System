@@ -10,28 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_23_231739) do
-
-  create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "record_type", null: false
-    t.bigint "record_id", null: false
-    t.bigint "blob_id", null: false
-    t.datetime "created_at", null: false
-    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
-    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
-  end
-
-  create_table "active_storage_blobs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "key", null: false
-    t.string "filename", null: false
-    t.string "content_type"
-    t.text "metadata"
-    t.bigint "byte_size", null: false
-    t.string "checksum", null: false
-    t.datetime "created_at", null: false
-    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
-  end
+ActiveRecord::Schema.define(version: 2021_02_23_030947) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "address_type"
@@ -47,6 +26,19 @@ ActiveRecord::Schema.define(version: 2021_02_23_231739) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "batteries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "battery_building_id"
+    t.string "battery_building_type"
+    t.string "battery_employee_id"
+    t.date "battery_date_of_commission"
+    t.string "battery_date_of_last_inspection"
+    t.string "battery_certificate_of_operations"
+    t.string "battery_information"
+    t.text "battery_notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "buildings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "building_customer_ID"
     t.string "building_address"
@@ -56,6 +48,18 @@ ActiveRecord::Schema.define(version: 2021_02_23_231739) do
     t.string "building_technical_contact_email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "columns", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "battery_id"
+    t.string "building_type"
+    t.integer "floors_served"
+    t.string "status"
+    t.text "information"
+    t.text "notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["battery_id"], name: "index_columns_on_battery_id"
   end
 
   create_table "customers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -72,6 +76,22 @@ ActiveRecord::Schema.define(version: 2021_02_23_231739) do
     t.string "customer_technical_manager_email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "elevators", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "column_id"
+    t.string "elevator_serial_number"
+    t.string "elevator_model"
+    t.string "elevator_type"
+    t.string "elevator_status"
+    t.string "elevator_date_of_commissioning"
+    t.string "elevator_date_of_last_inspection"
+    t.string "elevator_certificate_of_inspection"
+    t.string "elevator_information"
+    t.text "elevator_notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["column_id"], name: "index_elevators_on_column_id"
   end
 
   create_table "employees", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -93,6 +113,7 @@ ActiveRecord::Schema.define(version: 2021_02_23_231739) do
     t.string "project_description_leads"
     t.string "department"
     t.text "message_leads"
+    t.binary "attachment_file_leads", limit: 16777215
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -143,7 +164,6 @@ ActiveRecord::Schema.define(version: 2021_02_23_231739) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "columns", "batteries"
   add_foreign_key "elevators", "columns"
   add_foreign_key "employees", "users"
