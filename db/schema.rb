@@ -10,7 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_22_223730) do
+ActiveRecord::Schema.define(version: 2021_02_22_222645) do
+
+  create_table "customers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "customer_user_id"
+    t.date "customer_creation_date"
+    t.string "customer_company_name"
+    t.string "customer_company_hq_address"
+    t.string "customer_full_name_of_company_contact"
+    t.string "customer_company_phone"
+    t.string "customer_company_email"
+    t.text "customer_company_description"
+    t.string "customer_full_name_of_service_technical_authority"
+    t.string "customer_technical_authority_phone"
+    t.string "customer_technical_manager_email"
+  end
+
+  create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "address_type"
+    t.string "address_status"
+    t.string "address_entity"
+    t.string "address_street"
+    t.string "address_suite_or_apt"
+    t.string "address_city"
+    t.string "address_zip_code"
+    t.string "address_country"
+    t.text "address_notes"
+  end
 
   create_table "buildings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "building_customer_ID"
@@ -31,6 +57,20 @@ ActiveRecord::Schema.define(version: 2021_02_22_223730) do
     t.datetime "updated_at", null: false
     t.bigint "user_id"
     t.index ["user_id"], name: "index_employees_on_user_id"
+  end
+
+  create_table "leads", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "full_name_lead"
+    t.string "email_lead"
+    t.string "phone_lead"
+    t.string "company_name_leads"
+    t.string "project_name_leads"
+    t.string "project_description_leads"
+    t.string "department"
+    t.text "message_leads"
+    t.binary "attachment_file_leads", limit: 16777215
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "quotes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
