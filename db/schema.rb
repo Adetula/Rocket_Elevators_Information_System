@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_22_222645) do
+ActiveRecord::Schema.define(version: 2021_02_23_022544) do
+
+  create_table "batteries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "battery_building_id"
+    t.string "battery_building_type"
+    t.string "battery_employee_id"
+    t.date "battery_date_of_commission"
+    t.string "battery_date_of_last_inspection"
+    t.string "battery_certificate_of_operations"
+    t.string "battery_information"
+    t.text "battery_notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "customers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "customer_user_id"
