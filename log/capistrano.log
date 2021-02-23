@@ -1,0 +1,597 @@
+# Logfile created on 2021-02-20 19:34:08 -0500 by logger.rb/66358
+  INFO ---------------------------------------------------------------------------
+  INFO START 2021-02-20 19:34:08 -0500 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [b181ff32] Running /usr/bin/env mkdir -p /home/ubuntu/apps/WillJohnson/rvm1scripts/ as ubuntu@99.79.123.96
+ DEBUG [b181ff32] Command: /usr/bin/env mkdir -p /home/ubuntu/apps/WillJohnson/rvm1scripts/
+  INFO [b181ff32] Finished in 12.854 seconds with exit status 0 (successful).
+ DEBUG Uploading /Users/tatianaramirez/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/rvm1-capistrano3-1.4.0/script/rvm-auto.sh 0.0%
+  INFO Uploading /Users/tatianaramirez/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/rvm1-capistrano3-1.4.0/script/rvm-auto.sh 100.0%
+  INFO [377b6db5] Running /usr/bin/env chmod +x /home/ubuntu/apps/WillJohnson/rvm1scripts/rvm-auto.sh as ubuntu@99.79.123.96
+ DEBUG [377b6db5] Command: /usr/bin/env chmod +x /home/ubuntu/apps/WillJohnson/rvm1scripts/rvm-auto.sh
+  INFO [377b6db5] Finished in 0.068 seconds with exit status 0 (successful).
+  INFO [6502bf10] Running /usr/bin/env mkdir -p /tmp as ubuntu@99.79.123.96
+ DEBUG [6502bf10] Command: /usr/bin/env mkdir -p /tmp
+  INFO [6502bf10] Finished in 0.024 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-e60f146830ba7690742e.sh 0.0%
+  INFO Uploading /tmp/git-ssh-e60f146830ba7690742e.sh 100.0%
+  INFO [2ebfdb97] Running /usr/bin/env chmod 700 /tmp/git-ssh-e60f146830ba7690742e.sh as ubuntu@99.79.123.96
+ DEBUG [2ebfdb97] Command: /usr/bin/env chmod 700 /tmp/git-ssh-e60f146830ba7690742e.sh
+  INFO [2ebfdb97] Finished in 0.026 seconds with exit status 0 (successful).
+ DEBUG [d08de252] Running [ -f /home/ubuntu/apps/WillJohnson/repo/HEAD ] as ubuntu@99.79.123.96
+ DEBUG [d08de252] Command: [ -f /home/ubuntu/apps/WillJohnson/repo/HEAD ]
+ DEBUG [d08de252] Finished in 0.066 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/ubuntu/apps/WillJohnson/repo
+ DEBUG [fff21298] Running if test ! -d /home/ubuntu/apps/WillJohnson/repo; then echo "Directory does not exist '/home/ubuntu/apps/WillJohnson/repo'" 1>&2; false; fi as ubuntu@99.79.123.96
+ DEBUG [fff21298] Command: if test ! -d /home/ubuntu/apps/WillJohnson/repo; then echo "Directory does not exist '/home/ubuntu/apps/WillJohnson/repo'" 1>&2; false; fi
+ DEBUG [fff21298] Finished in 0.025 seconds with exit status 0 (successful).
+  INFO [6910ab99] Running /usr/bin/env git remote set-url origin https://github.com/willJacct/Rocket_Elevators_Information_System.git as ubuntu@99.79.123.96
+ DEBUG [6910ab99] Command: cd /home/ubuntu/apps/WillJohnson/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-e60f146830ba7690742e.sh" ; /usr/bin/env git remote set-url origin https://github.com/willJacct/Rocket_Elevators_Information_System.git )
+  INFO [6910ab99] Finished in 0.069 seconds with exit status 0 (successful).
+  INFO [b2568b8e] Running /usr/bin/env git remote update --prune as ubuntu@99.79.123.96
+ DEBUG [b2568b8e] Command: cd /home/ubuntu/apps/WillJohnson/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-e60f146830ba7690742e.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [b2568b8e] 	Fetching origin
+ DEBUG [b2568b8e] 	From https://github.com/willJacct/Rocket_Elevators_Information_System
+ * [new branch]      Tatiana-Ramirez-NewVesion -> Tatiana-Ramirez-NewVesion
+ DEBUG [b2568b8e] 	   d2b8c00..6785f05  main                      -> main
+  INFO [b2568b8e] Finished in 0.299 seconds with exit status 0 (successful).
+ DEBUG [5bf43cc2] Running if test ! -d /home/ubuntu/apps/WillJohnson/repo; then echo "Directory does not exist '/home/ubuntu/apps/WillJohnson/repo'" 1>&2; false; fi as ubuntu@99.79.123.96
+ DEBUG [5bf43cc2] Command: if test ! -d /home/ubuntu/apps/WillJohnson/repo; then echo "Directory does not exist '/home/ubuntu/apps/WillJohnson/repo'" 1>&2; false; fi
+ DEBUG [5bf43cc2] Finished in 0.067 seconds with exit status 0 (successful).
+  INFO [ec883f83] Running /usr/bin/env mkdir -p /home/ubuntu/apps/WillJohnson/releases/20210221003421 as ubuntu@99.79.123.96
+ DEBUG [ec883f83] Command: cd /home/ubuntu/apps/WillJohnson/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-e60f146830ba7690742e.sh" ; /usr/bin/env mkdir -p /home/ubuntu/apps/WillJohnson/releases/20210221003421 )
+  INFO [ec883f83] Finished in 0.027 seconds with exit status 0 (successful).
+  INFO [f4e49efd] Running /usr/bin/env git archive main | /usr/bin/env tar -x -f - -C /home/ubuntu/apps/WillJohnson/releases/20210221003421 as ubuntu@99.79.123.96
+ DEBUG [f4e49efd] Command: cd /home/ubuntu/apps/WillJohnson/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-e60f146830ba7690742e.sh" ; /usr/bin/env git archive main | /usr/bin/env tar -x -f - -C /home/ubuntu/apps/WillJohnson/releases/20210221003421 )
+  INFO [f4e49efd] Finished in 0.199 seconds with exit status 0 (successful).
+ DEBUG [5d665c47] Running if test ! -d /home/ubuntu/apps/WillJohnson/repo; then echo "Directory does not exist '/home/ubuntu/apps/WillJohnson/repo'" 1>&2; false; fi as ubuntu@99.79.123.96
+ DEBUG [5d665c47] Command: if test ! -d /home/ubuntu/apps/WillJohnson/repo; then echo "Directory does not exist '/home/ubuntu/apps/WillJohnson/repo'" 1>&2; false; fi
+ DEBUG [5d665c47] Finished in 0.022 seconds with exit status 0 (successful).
+ DEBUG [9edb2a01] Running /usr/bin/env git rev-list --max-count=1 main as ubuntu@99.79.123.96
+ DEBUG [9edb2a01] Command: cd /home/ubuntu/apps/WillJohnson/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-e60f146830ba7690742e.sh" ; /usr/bin/env git rev-list --max-count=1 main )
+ DEBUG [9edb2a01] 	6785f058505170aae4dace02ee9ac40a845eb42c
+ DEBUG [9edb2a01] Finished in 0.067 seconds with exit status 0 (successful).
+ DEBUG [b4b46ac2] Running if test ! -d /home/ubuntu/apps/WillJohnson/releases/20210221003421; then echo "Directory does not exist '/home/ubuntu/apps/WillJohnson/releases/20210221003421'" 1>&2; false; fi as ubuntu@99.79.123.96
+ DEBUG [b4b46ac2] Command: if test ! -d /home/ubuntu/apps/WillJohnson/releases/20210221003421; then echo "Directory does not exist '/home/ubuntu/apps/WillJohnson/releases/20210221003421'" 1>&2; false; fi
+ DEBUG [b4b46ac2] Finished in 0.026 seconds with exit status 0 (successful).
+  INFO [2e4abbad] Running /usr/bin/env echo "6785f058505170aae4dace02ee9ac40a845eb42c" > REVISION as ubuntu@99.79.123.96
+ DEBUG [2e4abbad] Command: cd /home/ubuntu/apps/WillJohnson/releases/20210221003421 && /usr/bin/env echo "6785f058505170aae4dace02ee9ac40a845eb42c" > REVISION
+  INFO [2e4abbad] Finished in 0.068 seconds with exit status 0 (successful).
+  INFO [2ed9e465] Running /usr/bin/env mkdir -p /home/ubuntu/apps/WillJohnson/releases/20210221003421/config as ubuntu@99.79.123.96
+ DEBUG [2ed9e465] Command: /usr/bin/env mkdir -p /home/ubuntu/apps/WillJohnson/releases/20210221003421/config
+  INFO [2ed9e465] Finished in 0.025 seconds with exit status 0 (successful).
+ DEBUG [6b80dfec] Running [ -L /home/ubuntu/apps/WillJohnson/releases/20210221003421/config/database.yml ] as ubuntu@99.79.123.96
+ DEBUG [6b80dfec] Command: [ -L /home/ubuntu/apps/WillJohnson/releases/20210221003421/config/database.yml ]
+ DEBUG [6b80dfec] Finished in 0.068 seconds with exit status 1 (failed).
+ DEBUG [6af70bf2] Running [ -f /home/ubuntu/apps/WillJohnson/releases/20210221003421/config/database.yml ] as ubuntu@99.79.123.96
+ DEBUG [6af70bf2] Command: [ -f /home/ubuntu/apps/WillJohnson/releases/20210221003421/config/database.yml ]
+ DEBUG [6af70bf2] Finished in 0.026 seconds with exit status 0 (successful).
+  INFO [c33550c4] Running /usr/bin/env rm /home/ubuntu/apps/WillJohnson/releases/20210221003421/config/database.yml as ubuntu@99.79.123.96
+ DEBUG [c33550c4] Command: /usr/bin/env rm /home/ubuntu/apps/WillJohnson/releases/20210221003421/config/database.yml
+  INFO [c33550c4] Finished in 0.067 seconds with exit status 0 (successful).
+  INFO [eda2e65c] Running /usr/bin/env ln -s /home/ubuntu/apps/WillJohnson/shared/config/database.yml /home/ubuntu/apps/WillJohnson/releases/20210221003421/config/database.yml as ubuntu@99.79.123.96
+ DEBUG [eda2e65c] Command: /usr/bin/env ln -s /home/ubuntu/apps/WillJohnson/shared/config/database.yml /home/ubuntu/apps/WillJohnson/releases/20210221003421/config/database.yml
+  INFO [eda2e65c] Finished in 0.024 seconds with exit status 0 (successful).
+  INFO [b85a05f0] Running /usr/bin/env mkdir -p /home/ubuntu/apps/WillJohnson/releases/20210221003421/tmp /home/ubuntu/apps/WillJohnson/releases/20210221003421 /home/ubuntu/apps/WillJohnson/releases/20210221003421/public as ubuntu@99.79.123.96
+ DEBUG [b85a05f0] Command: /usr/bin/env mkdir -p /home/ubuntu/apps/WillJohnson/releases/20210221003421/tmp /home/ubuntu/apps/WillJohnson/releases/20210221003421 /home/ubuntu/apps/WillJohnson/releases/20210221003421/public
+  INFO [b85a05f0] Finished in 0.067 seconds with exit status 0 (successful).
+ DEBUG [679623bb] Running [ -L /home/ubuntu/apps/WillJohnson/releases/20210221003421/tmp/pids ] as ubuntu@99.79.123.96
+ DEBUG [679623bb] Command: [ -L /home/ubuntu/apps/WillJohnson/releases/20210221003421/tmp/pids ]
+ DEBUG [679623bb] Finished in 0.025 seconds with exit status 1 (failed).
+ DEBUG [ba08e7e4] Running [ -d /home/ubuntu/apps/WillJohnson/releases/20210221003421/tmp/pids ] as ubuntu@99.79.123.96
+ DEBUG [ba08e7e4] Command: [ -d /home/ubuntu/apps/WillJohnson/releases/20210221003421/tmp/pids ]
+ DEBUG [ba08e7e4] Finished in 0.065 seconds with exit status 1 (failed).
+  INFO [ebc95916] Running /usr/bin/env ln -s /home/ubuntu/apps/WillJohnson/shared/tmp/pids /home/ubuntu/apps/WillJohnson/releases/20210221003421/tmp/pids as ubuntu@99.79.123.96
+ DEBUG [ebc95916] Command: /usr/bin/env ln -s /home/ubuntu/apps/WillJohnson/shared/tmp/pids /home/ubuntu/apps/WillJohnson/releases/20210221003421/tmp/pids
+  INFO [ebc95916] Finished in 0.025 seconds with exit status 0 (successful).
+ DEBUG [1f50a63b] Running [ -L /home/ubuntu/apps/WillJohnson/releases/20210221003421/tmp/sockets ] as ubuntu@99.79.123.96
+ DEBUG [1f50a63b] Command: [ -L /home/ubuntu/apps/WillJohnson/releases/20210221003421/tmp/sockets ]
+ DEBUG [1f50a63b] Finished in 0.067 seconds with exit status 1 (failed).
+ DEBUG [ec3f82c8] Running [ -d /home/ubuntu/apps/WillJohnson/releases/20210221003421/tmp/sockets ] as ubuntu@99.79.123.96
+ DEBUG [ec3f82c8] Command: [ -d /home/ubuntu/apps/WillJohnson/releases/20210221003421/tmp/sockets ]
+ DEBUG [ec3f82c8] Finished in 0.024 seconds with exit status 1 (failed).
+  INFO [7818f251] Running /usr/bin/env ln -s /home/ubuntu/apps/WillJohnson/shared/tmp/sockets /home/ubuntu/apps/WillJohnson/releases/20210221003421/tmp/sockets as ubuntu@99.79.123.96
+ DEBUG [7818f251] Command: /usr/bin/env ln -s /home/ubuntu/apps/WillJohnson/shared/tmp/sockets /home/ubuntu/apps/WillJohnson/releases/20210221003421/tmp/sockets
+  INFO [7818f251] Finished in 0.069 seconds with exit status 0 (successful).
+ DEBUG [42a5f589] Running [ -L /home/ubuntu/apps/WillJohnson/releases/20210221003421/log ] as ubuntu@99.79.123.96
+ DEBUG [42a5f589] Command: [ -L /home/ubuntu/apps/WillJohnson/releases/20210221003421/log ]
+ DEBUG [42a5f589] Finished in 0.025 seconds with exit status 1 (failed).
+ DEBUG [970ee7f4] Running [ -d /home/ubuntu/apps/WillJohnson/releases/20210221003421/log ] as ubuntu@99.79.123.96
+ DEBUG [970ee7f4] Command: [ -d /home/ubuntu/apps/WillJohnson/releases/20210221003421/log ]
+ DEBUG [970ee7f4] Finished in 0.069 seconds with exit status 0 (successful).
+  INFO [f0d91722] Running /usr/bin/env rm -rf /home/ubuntu/apps/WillJohnson/releases/20210221003421/log as ubuntu@99.79.123.96
+ DEBUG [f0d91722] Command: /usr/bin/env rm -rf /home/ubuntu/apps/WillJohnson/releases/20210221003421/log
+  INFO [f0d91722] Finished in 0.025 seconds with exit status 0 (successful).
+  INFO [a6af8020] Running /usr/bin/env ln -s /home/ubuntu/apps/WillJohnson/shared/log /home/ubuntu/apps/WillJohnson/releases/20210221003421/log as ubuntu@99.79.123.96
+ DEBUG [a6af8020] Command: /usr/bin/env ln -s /home/ubuntu/apps/WillJohnson/shared/log /home/ubuntu/apps/WillJohnson/releases/20210221003421/log
+  INFO [a6af8020] Finished in 0.070 seconds with exit status 0 (successful).
+ DEBUG [ff90615b] Running [ -L /home/ubuntu/apps/WillJohnson/releases/20210221003421/public/assets ] as ubuntu@99.79.123.96
+ DEBUG [ff90615b] Command: [ -L /home/ubuntu/apps/WillJohnson/releases/20210221003421/public/assets ]
+ DEBUG [ff90615b] Finished in 0.025 seconds with exit status 1 (failed).
+ DEBUG [75fcd2e5] Running [ -d /home/ubuntu/apps/WillJohnson/releases/20210221003421/public/assets ] as ubuntu@99.79.123.96
+ DEBUG [75fcd2e5] Command: [ -d /home/ubuntu/apps/WillJohnson/releases/20210221003421/public/assets ]
+ DEBUG [75fcd2e5] Finished in 0.069 seconds with exit status 1 (failed).
+  INFO [ff88170c] Running /usr/bin/env ln -s /home/ubuntu/apps/WillJohnson/shared/public/assets /home/ubuntu/apps/WillJohnson/releases/20210221003421/public/assets as ubuntu@99.79.123.96
+ DEBUG [ff88170c] Command: /usr/bin/env ln -s /home/ubuntu/apps/WillJohnson/shared/public/assets /home/ubuntu/apps/WillJohnson/releases/20210221003421/public/assets
+  INFO [ff88170c] Finished in 0.025 seconds with exit status 0 (successful).
+ DEBUG [bd87cfaf] Running if test ! -d /home/ubuntu/apps/WillJohnson/releases/20210221003421; then echo "Directory does not exist '/home/ubuntu/apps/WillJohnson/releases/20210221003421'" 1>&2; false; fi as ubuntu@99.79.123.96
+ DEBUG [bd87cfaf] Command: if test ! -d /home/ubuntu/apps/WillJohnson/releases/20210221003421; then echo "Directory does not exist '/home/ubuntu/apps/WillJohnson/releases/20210221003421'" 1>&2; false; fi
+ DEBUG [bd87cfaf] Finished in 0.064 seconds with exit status 0 (successful).
+  INFO [452d29dd] Running /usr/bin/env /home/ubuntu/apps/WillJohnson/rvm1scripts/rvm-auto.sh rvm --install install . as ubuntu@99.79.123.96
+ DEBUG [452d29dd] Command: cd /home/ubuntu/apps/WillJohnson/releases/20210221003421 && /usr/bin/env /home/ubuntu/apps/WillJohnson/rvm1scripts/rvm-auto.sh rvm --install install .
+ DEBUG [452d29dd] 	Warning, new version of rvm available '1.29.12', you are using older version '1.29.9'.
+You can disable this warning with:   echo rvm_autoupdate_flag=0 >> ~/.rvmrc
+You can enable auto-update with:     echo rvm_autoupdate_flag=2 >> ~/.rvmrc
+You can update manually with:        rvm get VERSION                         (e.g. 'rvm get stable')
+
+ DEBUG [452d29dd] 	Already installed ruby-2.6.6.
+To reinstall use:
+
+    rvm reinstall ruby-2.6.6
+
+  INFO [452d29dd] Finished in 0.461 seconds with exit status 0 (successful).
+  INFO [523d9c0f] Running /usr/bin/env git ls-remote https://github.com/willJacct/Rocket_Elevators_Information_System.git HEAD as ubuntu@99.79.123.96
+ DEBUG [523d9c0f] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-e60f146830ba7690742e.sh" ; /usr/bin/env git ls-remote https://github.com/willJacct/Rocket_Elevators_Information_System.git HEAD )
+ DEBUG [523d9c0f] 	6785f058505170aae4dace02ee9ac40a845eb42c	HEAD
+  INFO [523d9c0f] Finished in 0.216 seconds with exit status 0 (successful).
+  INFO [99eb8a18] Running /usr/bin/env mkdir -p /home/ubuntu/apps/WillJohnson/shared /home/ubuntu/apps/WillJohnson/releases as ubuntu@99.79.123.96
+ DEBUG [99eb8a18] Command: /usr/bin/env mkdir -p /home/ubuntu/apps/WillJohnson/shared /home/ubuntu/apps/WillJohnson/releases
+  INFO [99eb8a18] Finished in 0.024 seconds with exit status 0 (successful).
+  INFO [065f2051] Running /usr/bin/env mkdir -p /home/ubuntu/apps/WillJohnson/shared/tmp/pids /home/ubuntu/apps/WillJohnson/shared/tmp/sockets /home/ubuntu/apps/WillJohnson/shared/log /home/ubuntu/apps/WillJohnson/shared/public/assets as ubuntu@99.79.123.96
+ DEBUG [065f2051] Command: /usr/bin/env mkdir -p /home/ubuntu/apps/WillJohnson/shared/tmp/pids /home/ubuntu/apps/WillJohnson/shared/tmp/sockets /home/ubuntu/apps/WillJohnson/shared/log /home/ubuntu/apps/WillJohnson/shared/public/assets
+  INFO [065f2051] Finished in 0.066 seconds with exit status 0 (successful).
+  INFO [fc7b88e8] Running /usr/bin/env mkdir -p /home/ubuntu/apps/WillJohnson/shared/config as ubuntu@99.79.123.96
+ DEBUG [fc7b88e8] Command: /usr/bin/env mkdir -p /home/ubuntu/apps/WillJohnson/shared/config
+  INFO [fc7b88e8] Finished in 0.024 seconds with exit status 0 (successful).
+ DEBUG [da68a150] Running [ -f /home/ubuntu/apps/WillJohnson/shared/config/database.yml ] as ubuntu@99.79.123.96
+ DEBUG [da68a150] Command: [ -f /home/ubuntu/apps/WillJohnson/shared/config/database.yml ]
+ DEBUG [da68a150] Finished in 0.067 seconds with exit status 0 (successful).
+ DEBUG [d7a4c3e2] Running [ -f /home/ubuntu/apps/WillJohnson/shared/puma.rb ] as ubuntu@99.79.123.96
+ DEBUG [d7a4c3e2] Command: [ -f /home/ubuntu/apps/WillJohnson/shared/puma.rb ]
+ DEBUG [d7a4c3e2] Finished in 0.023 seconds with exit status 0 (successful).
+ DEBUG [64854f28] Running [ -f /home/ubuntu/apps/WillJohnson/releases/20210221003421/REVISION ] as ubuntu@99.79.123.96
+ DEBUG [64854f28] Command: [ -f /home/ubuntu/apps/WillJohnson/releases/20210221003421/REVISION ]
+ DEBUG [64854f28] Finished in 0.070 seconds with exit status 0 (successful).
+ DEBUG [3e33b882] Running /usr/bin/env cat /home/ubuntu/apps/WillJohnson/releases/20210221003421/REVISION 2>/dev/null as ubuntu@99.79.123.96
+ DEBUG [3e33b882] Command: /usr/bin/env cat /home/ubuntu/apps/WillJohnson/releases/20210221003421/REVISION 2>/dev/null
+ DEBUG [3e33b882] 	6785f058505170aae4dace02ee9ac40a845eb42c
+ DEBUG [3e33b882] Finished in 0.025 seconds with exit status 0 (successful).
+ DEBUG [b128e94c] Running if test ! -d /home/ubuntu/apps/WillJohnson/releases/20210221003421; then echo "Directory does not exist '/home/ubuntu/apps/WillJohnson/releases/20210221003421'" 1>&2; false; fi as ubuntu@99.79.123.96
+ DEBUG [b128e94c] Command: if test ! -d /home/ubuntu/apps/WillJohnson/releases/20210221003421; then echo "Directory does not exist '/home/ubuntu/apps/WillJohnson/releases/20210221003421'" 1>&2; false; fi
+ DEBUG [b128e94c] Finished in 0.068 seconds with exit status 0 (successful).
+  INFO [9487cc8f] Running /home/ubuntu/apps/WillJohnson/rvm1scripts/rvm-auto.sh . bundle config --local deployment true as ubuntu@99.79.123.96
+ DEBUG [9487cc8f] Command: cd /home/ubuntu/apps/WillJohnson/releases/20210221003421 && /home/ubuntu/apps/WillJohnson/rvm1scripts/rvm-auto.sh . bundle config --local deployment true
+  INFO [9487cc8f] Finished in 0.862 seconds with exit status 0 (successful).
+  INFO [93785f2b] Running /home/ubuntu/apps/WillJohnson/rvm1scripts/rvm-auto.sh . bundle config --local path /home/ubuntu/apps/WillJohnson/shared/bundle as ubuntu@99.79.123.96
+ DEBUG [93785f2b] Command: cd /home/ubuntu/apps/WillJohnson/releases/20210221003421 && /home/ubuntu/apps/WillJohnson/rvm1scripts/rvm-auto.sh . bundle config --local path /home/ubuntu/apps/WillJohnson/shared/bundle
+  INFO [93785f2b] Finished in 0.892 seconds with exit status 0 (successful).
+  INFO [42c7e723] Running /home/ubuntu/apps/WillJohnson/rvm1scripts/rvm-auto.sh . bundle config --local without production as ubuntu@99.79.123.96
+ DEBUG [42c7e723] Command: cd /home/ubuntu/apps/WillJohnson/releases/20210221003421 && /home/ubuntu/apps/WillJohnson/rvm1scripts/rvm-auto.sh . bundle config --local without production
+  INFO [42c7e723] Finished in 0.848 seconds with exit status 0 (successful).
+ DEBUG [b75ab2e2] Running if test ! -d /home/ubuntu/apps/WillJohnson/releases/20210221003421; then echo "Directory does not exist '/home/ubuntu/apps/WillJohnson/releases/20210221003421'" 1>&2; false; fi as ubuntu@99.79.123.96
+ DEBUG [b75ab2e2] Command: if test ! -d /home/ubuntu/apps/WillJohnson/releases/20210221003421; then echo "Directory does not exist '/home/ubuntu/apps/WillJohnson/releases/20210221003421'" 1>&2; false; fi
+ DEBUG [b75ab2e2] Finished in 0.067 seconds with exit status 0 (successful).
+ DEBUG [af5c9192] Running /home/ubuntu/apps/WillJohnson/rvm1scripts/rvm-auto.sh . bundle check as ubuntu@99.79.123.96
+ DEBUG [af5c9192] Command: cd /home/ubuntu/apps/WillJohnson/releases/20210221003421 && /home/ubuntu/apps/WillJohnson/rvm1scripts/rvm-auto.sh . bundle check
+ DEBUG [af5c9192] 	Warning: the running version of Bundler (2.2.9) is older than the version that created the lockfile (2.2.10). We suggest you to upgrade to the version that created the lockfile by running `gem install bundler:2.2.10`.
+ DEBUG [af5c9192] 	The Gemfile's dependencies are satisfied
+ DEBUG [af5c9192] Finished in 0.987 seconds with exit status 0 (successful).
+  INFO The Gemfile's dependencies are satisfied, skipping installation
+ DEBUG [183664b8] Running if test ! -d /home/ubuntu/apps/WillJohnson/releases/20210221003421; then echo "Directory does not exist '/home/ubuntu/apps/WillJohnson/releases/20210221003421'" 1>&2; false; fi as ubuntu@99.79.123.96
+ DEBUG [183664b8] Command: if test ! -d /home/ubuntu/apps/WillJohnson/releases/20210221003421; then echo "Directory does not exist '/home/ubuntu/apps/WillJohnson/releases/20210221003421'" 1>&2; false; fi
+ DEBUG [183664b8] Finished in 0.066 seconds with exit status 0 (successful).
+  INFO [03ebd0c5] Running /home/ubuntu/apps/WillJohnson/rvm1scripts/rvm-auto.sh . bundle exec rake assets:precompile as ubuntu@99.79.123.96
+ DEBUG [03ebd0c5] Command: cd /home/ubuntu/apps/WillJohnson/releases/20210221003421 && ( export RAILS_ENV="development" RAILS_GROUPS="" ; /home/ubuntu/apps/WillJohnson/rvm1scripts/rvm-auto.sh . bundle exec rake assets:precompile )
+ DEBUG [03ebd0c5] 	yarn install v1.22.5
+ DEBUG [03ebd0c5] 	info No lockfile found.
+ DEBUG [03ebd0c5] 	[1/4] Resolving packages...
+ DEBUG [03ebd0c5] 	[2/4] Fetching packages...
+ DEBUG [03ebd0c5] 	[3/4] Linking dependencies...
+ DEBUG [03ebd0c5] 	[4/4] Building fresh packages...
+ DEBUG [03ebd0c5] 	success Saved lockfile.
+ DEBUG [03ebd0c5] 	Done in 0.06s.
+ DEBUG [03ebd0c5] 	I, [2021-02-21T00:35:12.392734 #10731]  INFO -- : Writing /home/ubuntu/apps/WillJohnson/releases/20210221003421/public/assets/application-cb8c2b1fdd26b92d5bf6b634260c38fef838dba6167e72c2003a346ffe0f1085.css
+ DEBUG [03ebd0c5] 	I, [2021-02-21T00:35:12.393215 #10731]  INFO -- : Writing /home/ubuntu/apps/WillJohnson/releases/20210221003421/public/assets/application-cb8c2b1fdd26b92d5bf6b634260c38fef838dba6167e72c2003a346ffe0f1085.css.gz
+  INFO [03ebd0c5] Finished in 43.895 seconds with exit status 0 (successful).
+ DEBUG [dd155e21] Running if test ! -d /home/ubuntu/apps/WillJohnson/releases/20210221003421; then echo "Directory does not exist '/home/ubuntu/apps/WillJohnson/releases/20210221003421'" 1>&2; false; fi as ubuntu@99.79.123.96
+ DEBUG [dd155e21] Command: if test ! -d /home/ubuntu/apps/WillJohnson/releases/20210221003421; then echo "Directory does not exist '/home/ubuntu/apps/WillJohnson/releases/20210221003421'" 1>&2; false; fi
+ DEBUG [dd155e21] Finished in 0.066 seconds with exit status 0 (successful).
+  INFO [26f0e555] Running /usr/bin/env mkdir -p /home/ubuntu/apps/WillJohnson/releases/20210221003421/assets_manifest_backup as ubuntu@99.79.123.96
+ DEBUG [26f0e555] Command: cd /home/ubuntu/apps/WillJohnson/releases/20210221003421 && /usr/bin/env mkdir -p /home/ubuntu/apps/WillJohnson/releases/20210221003421/assets_manifest_backup
+  INFO [26f0e555] Finished in 0.028 seconds with exit status 0 (successful).
+ DEBUG [83c73294] Running /usr/bin/env ls /home/ubuntu/apps/WillJohnson/releases/20210221003421/public/assets/.sprockets-manifest* as ubuntu@99.79.123.96
+ DEBUG [83c73294] Command: cd /home/ubuntu/apps/WillJohnson/releases/20210221003421 && /usr/bin/env ls /home/ubuntu/apps/WillJohnson/releases/20210221003421/public/assets/.sprockets-manifest*
+ DEBUG [83c73294] 	/home/ubuntu/apps/WillJohnson/releases/20210221003421/public/assets/.sprockets-manifest-e01925a0fe5f0efc65118dbf877bbfcb.json
+ DEBUG [83c73294] Finished in 0.069 seconds with exit status 0 (successful).
+ DEBUG [afefaa85] Running /usr/bin/env ls /home/ubuntu/apps/WillJohnson/releases/20210221003421/public/assets/.sprockets-manifest* as ubuntu@99.79.123.96
+ DEBUG [afefaa85] Command: cd /home/ubuntu/apps/WillJohnson/releases/20210221003421 && /usr/bin/env ls /home/ubuntu/apps/WillJohnson/releases/20210221003421/public/assets/.sprockets-manifest*
+ DEBUG [afefaa85] 	/home/ubuntu/apps/WillJohnson/releases/20210221003421/public/assets/.sprockets-manifest-e01925a0fe5f0efc65118dbf877bbfcb.json
+ DEBUG [afefaa85] Finished in 0.025 seconds with exit status 0 (successful).
+  INFO [828c5fdc] Running /usr/bin/env cp /home/ubuntu/apps/WillJohnson/releases/20210221003421/public/assets/.sprockets-manifest-e01925a0fe5f0efc65118dbf877bbfcb.json /home/ubuntu/apps/WillJohnson/releases/20210221003421/assets_manifest_backup as ubuntu@99.79.123.96
+ DEBUG [828c5fdc] Command: cd /home/ubuntu/apps/WillJohnson/releases/20210221003421 && /usr/bin/env cp /home/ubuntu/apps/WillJohnson/releases/20210221003421/public/assets/.sprockets-manifest-e01925a0fe5f0efc65118dbf877bbfcb.json /home/ubuntu/apps/WillJohnson/releases/20210221003421/assets_manifest_backup
+  INFO [828c5fdc] Finished in 0.071 seconds with exit status 0 (successful).
+  INFO [deploy:migrate] Run `rake db:migrate`
+ DEBUG [ca8e0820] Running if test ! -d /home/ubuntu/apps/WillJohnson/releases/20210221003421; then echo "Directory does not exist '/home/ubuntu/apps/WillJohnson/releases/20210221003421'" 1>&2; false; fi as ubuntu@99.79.123.96
+ DEBUG [ca8e0820] Command: if test ! -d /home/ubuntu/apps/WillJohnson/releases/20210221003421; then echo "Directory does not exist '/home/ubuntu/apps/WillJohnson/releases/20210221003421'" 1>&2; false; fi
+ DEBUG [ca8e0820] Finished in 0.025 seconds with exit status 0 (successful).
+  INFO [83a3a6e9] Running /home/ubuntu/apps/WillJohnson/rvm1scripts/rvm-auto.sh . bundle exec rake db:migrate as ubuntu@99.79.123.96
+ DEBUG [83a3a6e9] Command: cd /home/ubuntu/apps/WillJohnson/releases/20210221003421 && ( export RAILS_ENV="development" ; /home/ubuntu/apps/WillJohnson/rvm1scripts/rvm-auto.sh . bundle exec rake db:migrate )
+  INFO [83a3a6e9] Finished in 3.717 seconds with exit status 0 (successful).
+  INFO [b00dd325] Running /usr/bin/env ln -s /home/ubuntu/apps/WillJohnson/releases/20210221003421 /home/ubuntu/apps/WillJohnson/releases/current as ubuntu@99.79.123.96
+ DEBUG [b00dd325] Command: /usr/bin/env ln -s /home/ubuntu/apps/WillJohnson/releases/20210221003421 /home/ubuntu/apps/WillJohnson/releases/current
+  INFO [b00dd325] Finished in 0.025 seconds with exit status 0 (successful).
+  INFO [3f36d13a] Running /usr/bin/env mv /home/ubuntu/apps/WillJohnson/releases/current /home/ubuntu/apps/WillJohnson as ubuntu@99.79.123.96
+ DEBUG [3f36d13a] Command: /usr/bin/env mv /home/ubuntu/apps/WillJohnson/releases/current /home/ubuntu/apps/WillJohnson
+  INFO [3f36d13a] Finished in 0.070 seconds with exit status 0 (successful).
+ DEBUG [b4797feb] Running /usr/bin/env ls -x /home/ubuntu/apps/WillJohnson/releases as ubuntu@99.79.123.96
+ DEBUG [b4797feb] Command: /usr/bin/env ls -x /home/ubuntu/apps/WillJohnson/releases
+ DEBUG [b4797feb] 	20210219001211	20210220064814	20210220072816	20210220073119	20210220074813
+20210221003421
+ DEBUG [b4797feb] Finished in 0.025 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 6 deployed releases on 99.79.123.96
+ DEBUG [745fd537] Running [ -d /home/ubuntu/apps/WillJohnson/current ] as ubuntu@99.79.123.96
+ DEBUG [745fd537] Command: [ -d /home/ubuntu/apps/WillJohnson/current ]
+ DEBUG [745fd537] Finished in 0.065 seconds with exit status 0 (successful).
+ DEBUG [da0faa3d] Running /usr/bin/env readlink /home/ubuntu/apps/WillJohnson/current as ubuntu@99.79.123.96
+ DEBUG [da0faa3d] Command: /usr/bin/env readlink /home/ubuntu/apps/WillJohnson/current
+ DEBUG [da0faa3d] 	/home/ubuntu/apps/WillJohnson/releases/20210221003421
+ DEBUG [da0faa3d] Finished in 0.030 seconds with exit status 0 (successful).
+  INFO [3c2caa2e] Running /usr/bin/env rm -rf /home/ubuntu/apps/WillJohnson/releases/20210219001211 as ubuntu@99.79.123.96
+ DEBUG [3c2caa2e] Command: /usr/bin/env rm -rf /home/ubuntu/apps/WillJohnson/releases/20210219001211
+  INFO [3c2caa2e] Finished in 0.166 seconds with exit status 0 (successful).
+ DEBUG [a89917a6] Running if test ! -d /home/ubuntu/apps/WillJohnson/releases; then echo "Directory does not exist '/home/ubuntu/apps/WillJohnson/releases'" 1>&2; false; fi as ubuntu@99.79.123.96
+ DEBUG [a89917a6] Command: if test ! -d /home/ubuntu/apps/WillJohnson/releases; then echo "Directory does not exist '/home/ubuntu/apps/WillJohnson/releases'" 1>&2; false; fi
+ DEBUG [a89917a6] Finished in 0.025 seconds with exit status 0 (successful).
+  INFO [10f28cbf] Running /usr/bin/env echo "Branch main (at 6785f058505170aae4dace02ee9ac40a845eb42c) deployed as release 20210221003421 by tatianaramirez" >> /home/ubuntu/apps/WillJohnson/revisions.log as ubuntu@99.79.123.96
+ DEBUG [10f28cbf] Command: cd /home/ubuntu/apps/WillJohnson/releases && /usr/bin/env echo "Branch main (at 6785f058505170aae4dace02ee9ac40a845eb42c) deployed as release 20210221003421 by tatianaramirez" >> /home/ubuntu/apps/WillJohnson/revisions.log
+  INFO [10f28cbf] Finished in 0.067 seconds with exit status 0 (successful).
+ DEBUG [a91be821] Running if test ! -d /home/ubuntu/apps/WillJohnson/current; then echo "Directory does not exist '/home/ubuntu/apps/WillJohnson/current'" 1>&2; false; fi as ubuntu@99.79.123.96
+ DEBUG [a91be821] Command: if test ! -d /home/ubuntu/apps/WillJohnson/current; then echo "Directory does not exist '/home/ubuntu/apps/WillJohnson/current'" 1>&2; false; fi
+ DEBUG [a91be821] Finished in 0.026 seconds with exit status 0 (successful).
+ DEBUG [befa6fd6] Running [ -f /home/ubuntu/apps/WillJohnson/shared/tmp/pids/puma.pid ] as ubuntu@99.79.123.96
+ DEBUG [befa6fd6] Command: [ -f /home/ubuntu/apps/WillJohnson/shared/tmp/pids/puma.pid ]
+ DEBUG [befa6fd6] Finished in 0.066 seconds with exit status 0 (successful).
+ DEBUG [c47b034d] Running /usr/bin/env kill -0 $( cat /home/ubuntu/apps/WillJohnson/shared/tmp/pids/puma.pid ) as ubuntu@99.79.123.96
+ DEBUG [c47b034d] Command: cd /home/ubuntu/apps/WillJohnson/current && ( export RACK_ENV="development" ; /usr/bin/env kill -0 $( cat /home/ubuntu/apps/WillJohnson/shared/tmp/pids/puma.pid ) )
+ DEBUG [c47b034d] Finished in 0.033 seconds with exit status 0 (successful).
+  INFO [7e96d622] Running /home/ubuntu/apps/WillJohnson/rvm1scripts/rvm-auto.sh . bundle exec pumactl -S /home/ubuntu/apps/WillJohnson/shared/tmp/pids/puma.state -F /home/ubuntu/apps/WillJohnson/shared/puma.rb restart as ubuntu@99.79.123.96
+ DEBUG [7e96d622] Command: cd /home/ubuntu/apps/WillJohnson/current && ( export RACK_ENV="development" ; /home/ubuntu/apps/WillJohnson/rvm1scripts/rvm-auto.sh . bundle exec pumactl -S /home/ubuntu/apps/WillJohnson/shared/tmp/pids/puma.state -F /home/ubuntu/apps/WillJohnson/shared/puma.rb restart )
+ DEBUG [7e96d622] 	Command restart sent success
+  INFO [7e96d622] Finished in 1.272 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2021-02-20 19:57:50 -0500 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [b026bd0d] Running /usr/bin/env mkdir -p /home/ubuntu/apps/WillJohnson/rvm1scripts/ as ubuntu@99.79.123.96
+ DEBUG [b026bd0d] Command: /usr/bin/env mkdir -p /home/ubuntu/apps/WillJohnson/rvm1scripts/
+  INFO [b026bd0d] Finished in 7.706 seconds with exit status 0 (successful).
+ DEBUG Uploading /Users/tatianaramirez/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/rvm1-capistrano3-1.4.0/script/rvm-auto.sh 0.0%
+  INFO Uploading /Users/tatianaramirez/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/rvm1-capistrano3-1.4.0/script/rvm-auto.sh 100.0%
+  INFO [2e831175] Running /usr/bin/env chmod +x /home/ubuntu/apps/WillJohnson/rvm1scripts/rvm-auto.sh as ubuntu@99.79.123.96
+ DEBUG [2e831175] Command: /usr/bin/env chmod +x /home/ubuntu/apps/WillJohnson/rvm1scripts/rvm-auto.sh
+  INFO [2e831175] Finished in 0.074 seconds with exit status 0 (successful).
+  INFO [4b739fd2] Running /usr/bin/env mkdir -p /tmp as ubuntu@99.79.123.96
+ DEBUG [4b739fd2] Command: /usr/bin/env mkdir -p /tmp
+  INFO [4b739fd2] Finished in 0.028 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-bf714395a289699f9ab6.sh 0.0%
+  INFO Uploading /tmp/git-ssh-bf714395a289699f9ab6.sh 100.0%
+  INFO [bc5aef0d] Running /usr/bin/env chmod 700 /tmp/git-ssh-bf714395a289699f9ab6.sh as ubuntu@99.79.123.96
+ DEBUG [bc5aef0d] Command: /usr/bin/env chmod 700 /tmp/git-ssh-bf714395a289699f9ab6.sh
+  INFO [bc5aef0d] Finished in 0.028 seconds with exit status 0 (successful).
+ DEBUG [5fc6f014] Running [ -f /home/ubuntu/apps/WillJohnson/repo/HEAD ] as ubuntu@99.79.123.96
+ DEBUG [5fc6f014] Command: [ -f /home/ubuntu/apps/WillJohnson/repo/HEAD ]
+ DEBUG [5fc6f014] Finished in 0.071 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/ubuntu/apps/WillJohnson/repo
+ DEBUG [4edb742e] Running if test ! -d /home/ubuntu/apps/WillJohnson/repo; then echo "Directory does not exist '/home/ubuntu/apps/WillJohnson/repo'" 1>&2; false; fi as ubuntu@99.79.123.96
+ DEBUG [4edb742e] Command: if test ! -d /home/ubuntu/apps/WillJohnson/repo; then echo "Directory does not exist '/home/ubuntu/apps/WillJohnson/repo'" 1>&2; false; fi
+ DEBUG [4edb742e] Finished in 0.031 seconds with exit status 0 (successful).
+  INFO [f0bb9ff3] Running /usr/bin/env git remote set-url origin https://github.com/tatiana-wag/Rocket_Elevators_Information_System.git as ubuntu@99.79.123.96
+ DEBUG [f0bb9ff3] Command: cd /home/ubuntu/apps/WillJohnson/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-bf714395a289699f9ab6.sh" ; /usr/bin/env git remote set-url origin https://github.com/tatiana-wag/Rocket_Elevators_Information_System.git )
+  INFO [f0bb9ff3] Finished in 0.075 seconds with exit status 0 (successful).
+  INFO [0be3b38e] Running /usr/bin/env git remote update --prune as ubuntu@99.79.123.96
+ DEBUG [0be3b38e] Command: cd /home/ubuntu/apps/WillJohnson/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-bf714395a289699f9ab6.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [0be3b38e] 	Fetching origin
+ DEBUG [0be3b38e] 	remote: Invalid username or password.
+fatal: Authentication failed for 'https://github.com/tatiana-wag/Rocket_Elevators_Information_System.git/'
+ DEBUG [0be3b38e] 	error: Could not fetch origin
+  INFO ---------------------------------------------------------------------------
+  INFO START 2021-02-20 20:16:55 -0500 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [289d3e68] Running /usr/bin/env mkdir -p /home/ubuntu/apps/WillJohnson/rvm1scripts/ as ubuntu@99.79.123.96
+ DEBUG [289d3e68] Command: /usr/bin/env mkdir -p /home/ubuntu/apps/WillJohnson/rvm1scripts/
+  INFO [289d3e68] Finished in 8.466 seconds with exit status 0 (successful).
+ DEBUG Uploading /Users/tatianaramirez/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/rvm1-capistrano3-1.4.0/script/rvm-auto.sh 0.0%
+  INFO Uploading /Users/tatianaramirez/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/rvm1-capistrano3-1.4.0/script/rvm-auto.sh 100.0%
+  INFO [fdc2ef5a] Running /usr/bin/env chmod +x /home/ubuntu/apps/WillJohnson/rvm1scripts/rvm-auto.sh as ubuntu@99.79.123.96
+ DEBUG [fdc2ef5a] Command: /usr/bin/env chmod +x /home/ubuntu/apps/WillJohnson/rvm1scripts/rvm-auto.sh
+  INFO [fdc2ef5a] Finished in 0.068 seconds with exit status 0 (successful).
+  INFO [b02ba86a] Running /usr/bin/env mkdir -p /tmp as ubuntu@99.79.123.96
+ DEBUG [b02ba86a] Command: /usr/bin/env mkdir -p /tmp
+  INFO [b02ba86a] Finished in 0.028 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-40ae2c42699b4fd664be.sh 0.0%
+  INFO Uploading /tmp/git-ssh-40ae2c42699b4fd664be.sh 100.0%
+  INFO [83291d47] Running /usr/bin/env chmod 700 /tmp/git-ssh-40ae2c42699b4fd664be.sh as ubuntu@99.79.123.96
+ DEBUG [83291d47] Command: /usr/bin/env chmod 700 /tmp/git-ssh-40ae2c42699b4fd664be.sh
+  INFO [83291d47] Finished in 0.031 seconds with exit status 0 (successful).
+ DEBUG [1a36518a] Running [ -f /home/ubuntu/apps/WillJohnson/repo/HEAD ] as ubuntu@99.79.123.96
+ DEBUG [1a36518a] Command: [ -f /home/ubuntu/apps/WillJohnson/repo/HEAD ]
+ DEBUG [1a36518a] Finished in 0.071 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/ubuntu/apps/WillJohnson/repo
+ DEBUG [bf6e6650] Running if test ! -d /home/ubuntu/apps/WillJohnson/repo; then echo "Directory does not exist '/home/ubuntu/apps/WillJohnson/repo'" 1>&2; false; fi as ubuntu@99.79.123.96
+ DEBUG [bf6e6650] Command: if test ! -d /home/ubuntu/apps/WillJohnson/repo; then echo "Directory does not exist '/home/ubuntu/apps/WillJohnson/repo'" 1>&2; false; fi
+ DEBUG [bf6e6650] Finished in 0.025 seconds with exit status 0 (successful).
+  INFO [aa6cf8d4] Running /usr/bin/env git remote set-url origin https://github.com/tatiana-wag/Rocket_Elevators_Information_System.git as ubuntu@99.79.123.96
+ DEBUG [aa6cf8d4] Command: cd /home/ubuntu/apps/WillJohnson/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-40ae2c42699b4fd664be.sh" ; /usr/bin/env git remote set-url origin https://github.com/tatiana-wag/Rocket_Elevators_Information_System.git )
+  INFO [aa6cf8d4] Finished in 0.071 seconds with exit status 0 (successful).
+  INFO [e6be530d] Running /usr/bin/env git remote update --prune as ubuntu@99.79.123.96
+ DEBUG [e6be530d] Command: cd /home/ubuntu/apps/WillJohnson/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-40ae2c42699b4fd664be.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [e6be530d] 	Fetching origin
+ DEBUG [e6be530d] 	From https://github.com/tatiana-wag/Rocket_Elevators_Information_System
+ - [deleted]         (none)     -> AdminAdd
+ DEBUG [e6be530d] 	 - [deleted]         (none)     -> Don-Nguyen
+ - [deleted]         (none)     -> DonDraft
+ - [deleted]         (none)     -> DonLinks
+ - [deleted]         (none)     -> DonQuote
+ - [deleted]         (none)     -> DonSignLink
+ DEBUG [e6be530d] 	 - [deleted]         (none)     -> IconFix
+ - [deleted]         (none)     -> IndexOla
+ - [deleted]         (none)     -> Tatiana-Ramirez
+ - [deleted]         (none)     -> Tatiana-Ramirez-NewVesion
+ - [deleted]         (none)     -> database_work
+ - [deleted]         (none)     -> indexStart
+ - [deleted]         (none)     -> main
+ - [deleted]         (none)     -> newBranchTJW
+ - [deleted]         (none)     -> quotes
+ - [deleted]         (none)     -> quotes2
+ DEBUG [e6be530d] 	 - [deleted]         (none)     -> residential
+ - [deleted]         (none)     -> tjwBranch
+ - [deleted]         (none)     -> tjwIndex2
+ - [deleted]         (none)     -> user_test
+ - [deleted]         (none)     -> refs/pull/1/head
+ DEBUG [e6be530d] 	 - [deleted]         (none)     -> refs/pull/10/head
+ - [deleted]         (none)     -> refs/pull/11/head
+ - [deleted]         (none)     -> refs/pull/12/head
+ DEBUG [e6be530d] 	 - [deleted]         (none)     -> refs/pull/13/head
+ - [deleted]         (none)     -> refs/pull/14/head
+ DEBUG [e6be530d] 	 - [deleted]         (none)     -> refs/pull/15/head
+ - [deleted]         (none)     -> refs/pull/16/head
+ DEBUG [e6be530d] 	 - [deleted]         (none)     -> refs/pull/17/head
+ - [deleted]         (none)     -> refs/pull/18/head
+ DEBUG [e6be530d] 	 - [deleted]         (none)     -> refs/pull/19/head
+ - [deleted]         (none)     -> refs/pull/2/head
+ DEBUG [e6be530d] 	 - [deleted]         (none)     -> refs/pull/20/head
+ - [deleted]         (none)     -> refs/pull/21/head
+ DEBUG [e6be530d] 	 - [deleted]         (none)     -> refs/pull/22/head
+ - [deleted]         (none)     -> refs/pull/23/head
+ - [deleted]         (none)     -> refs/pull/24/head
+ - [deleted]         (none)     -> refs/pull/25/head
+ - [deleted]         (none)     -> refs/pull/26/head
+ DEBUG [e6be530d] 	 - [deleted]         (none)     -> refs/pull/27/head
+ - [deleted]         (none)     -> refs/pull/28/head
+ DEBUG [e6be530d] 	 - [deleted]         (none)     -> refs/pull/29/head
+ - [deleted]         (none)     -> refs/pull/3/head
+ - [deleted]         (none)     -> refs/pull/30/head
+ DEBUG [e6be530d] 	 - [deleted]         (none)     -> refs/pull/31/head
+ - [deleted]         (none)     -> refs/pull/32/head
+ DEBUG [e6be530d] 	 - [deleted]         (none)     -> refs/pull/33/head
+ - [deleted]         (none)     -> refs/pull/4/head
+ DEBUG [e6be530d] 	 - [deleted]         (none)     -> refs/pull/5/head
+ - [deleted]         (none)     -> refs/pull/6/head
+ DEBUG [e6be530d] 	 - [deleted]         (none)     -> refs/pull/7/head
+ - [deleted]         (none)     -> refs/pull/8/head
+ - [deleted]         (none)     -> refs/pull/9/head
+ DEBUG [e6be530d] 	 * [new branch]      master     -> master
+  INFO [e6be530d] Finished in 3.596 seconds with exit status 0 (successful).
+ DEBUG [4beee9a0] Running if test ! -d /home/ubuntu/apps/WillJohnson/repo; then echo "Directory does not exist '/home/ubuntu/apps/WillJohnson/repo'" 1>&2; false; fi as ubuntu@99.79.123.96
+ DEBUG [4beee9a0] Command: if test ! -d /home/ubuntu/apps/WillJohnson/repo; then echo "Directory does not exist '/home/ubuntu/apps/WillJohnson/repo'" 1>&2; false; fi
+ DEBUG [4beee9a0] Finished in 0.074 seconds with exit status 0 (successful).
+  INFO [e680bcbc] Running /usr/bin/env mkdir -p /home/ubuntu/apps/WillJohnson/releases/20210221011704 as ubuntu@99.79.123.96
+ DEBUG [e680bcbc] Command: cd /home/ubuntu/apps/WillJohnson/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-40ae2c42699b4fd664be.sh" ; /usr/bin/env mkdir -p /home/ubuntu/apps/WillJohnson/releases/20210221011704 )
+  INFO [e680bcbc] Finished in 0.046 seconds with exit status 0 (successful).
+  INFO [dfcb6285] Running /usr/bin/env git archive main | /usr/bin/env tar -x -f - -C /home/ubuntu/apps/WillJohnson/releases/20210221011704 as ubuntu@99.79.123.96
+ DEBUG [dfcb6285] Command: cd /home/ubuntu/apps/WillJohnson/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-40ae2c42699b4fd664be.sh" ; /usr/bin/env git archive main | /usr/bin/env tar -x -f - -C /home/ubuntu/apps/WillJohnson/releases/20210221011704 )
+ DEBUG [dfcb6285] 	fatal: Not a valid object name
+ DEBUG [dfcb6285] 	tar: This does not look like a tar archive
+tar: Exiting with failure status due to previous errors
+  INFO ---------------------------------------------------------------------------
+  INFO START 2021-02-20 20:23:40 -0500 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [e8614221] Running /usr/bin/env mkdir -p /home/ubuntu/apps/WillJohnson/rvm1scripts/ as ubuntu@99.79.123.96
+ DEBUG [e8614221] Command: /usr/bin/env mkdir -p /home/ubuntu/apps/WillJohnson/rvm1scripts/
+  INFO [e8614221] Finished in 6.946 seconds with exit status 0 (successful).
+ DEBUG Uploading /Users/tatianaramirez/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/rvm1-capistrano3-1.4.0/script/rvm-auto.sh 0.0%
+  INFO Uploading /Users/tatianaramirez/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/rvm1-capistrano3-1.4.0/script/rvm-auto.sh 100.0%
+  INFO [8e8e5f67] Running /usr/bin/env chmod +x /home/ubuntu/apps/WillJohnson/rvm1scripts/rvm-auto.sh as ubuntu@99.79.123.96
+ DEBUG [8e8e5f67] Command: /usr/bin/env chmod +x /home/ubuntu/apps/WillJohnson/rvm1scripts/rvm-auto.sh
+  INFO [8e8e5f67] Finished in 0.067 seconds with exit status 0 (successful).
+  INFO [5ec47346] Running /usr/bin/env mkdir -p /tmp as ubuntu@99.79.123.96
+ DEBUG [5ec47346] Command: /usr/bin/env mkdir -p /tmp
+  INFO [5ec47346] Finished in 0.023 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-f874250960569c84869f.sh 0.0%
+  INFO Uploading /tmp/git-ssh-f874250960569c84869f.sh 100.0%
+  INFO [ee2ac960] Running /usr/bin/env chmod 700 /tmp/git-ssh-f874250960569c84869f.sh as ubuntu@99.79.123.96
+ DEBUG [ee2ac960] Command: /usr/bin/env chmod 700 /tmp/git-ssh-f874250960569c84869f.sh
+  INFO [ee2ac960] Finished in 0.026 seconds with exit status 0 (successful).
+ DEBUG [a744d35f] Running [ -f /home/ubuntu/apps/WillJohnson/repo/HEAD ] as ubuntu@99.79.123.96
+ DEBUG [a744d35f] Command: [ -f /home/ubuntu/apps/WillJohnson/repo/HEAD ]
+ DEBUG [a744d35f] Finished in 0.064 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/ubuntu/apps/WillJohnson/repo
+ DEBUG [7f1678db] Running if test ! -d /home/ubuntu/apps/WillJohnson/repo; then echo "Directory does not exist '/home/ubuntu/apps/WillJohnson/repo'" 1>&2; false; fi as ubuntu@99.79.123.96
+ DEBUG [7f1678db] Command: if test ! -d /home/ubuntu/apps/WillJohnson/repo; then echo "Directory does not exist '/home/ubuntu/apps/WillJohnson/repo'" 1>&2; false; fi
+ DEBUG [7f1678db] Finished in 0.025 seconds with exit status 0 (successful).
+  INFO [f065a0d2] Running /usr/bin/env git remote set-url origin https://github.com/tatiana-wag/Rocket_Elevators_Information_System.git as ubuntu@99.79.123.96
+ DEBUG [f065a0d2] Command: cd /home/ubuntu/apps/WillJohnson/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-f874250960569c84869f.sh" ; /usr/bin/env git remote set-url origin https://github.com/tatiana-wag/Rocket_Elevators_Information_System.git )
+  INFO [f065a0d2] Finished in 0.070 seconds with exit status 0 (successful).
+  INFO [18859f4d] Running /usr/bin/env git remote update --prune as ubuntu@99.79.123.96
+ DEBUG [18859f4d] Command: cd /home/ubuntu/apps/WillJohnson/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-f874250960569c84869f.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [18859f4d] 	Fetching origin
+ DEBUG [18859f4d] 	From https://github.com/tatiana-wag/Rocket_Elevators_Information_System
+   446901e..6aff595  master     -> master
+  INFO [18859f4d] Finished in 0.261 seconds with exit status 0 (successful).
+ DEBUG [28498556] Running if test ! -d /home/ubuntu/apps/WillJohnson/repo; then echo "Directory does not exist '/home/ubuntu/apps/WillJohnson/repo'" 1>&2; false; fi as ubuntu@99.79.123.96
+ DEBUG [28498556] Command: if test ! -d /home/ubuntu/apps/WillJohnson/repo; then echo "Directory does not exist '/home/ubuntu/apps/WillJohnson/repo'" 1>&2; false; fi
+ DEBUG [28498556] Finished in 0.067 seconds with exit status 0 (successful).
+  INFO [752e2ac2] Running /usr/bin/env mkdir -p /home/ubuntu/apps/WillJohnson/releases/20210221012347 as ubuntu@99.79.123.96
+ DEBUG [752e2ac2] Command: cd /home/ubuntu/apps/WillJohnson/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-f874250960569c84869f.sh" ; /usr/bin/env mkdir -p /home/ubuntu/apps/WillJohnson/releases/20210221012347 )
+  INFO [752e2ac2] Finished in 0.027 seconds with exit status 0 (successful).
+  INFO [a9626187] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/ubuntu/apps/WillJohnson/releases/20210221012347 as ubuntu@99.79.123.96
+ DEBUG [a9626187] Command: cd /home/ubuntu/apps/WillJohnson/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-f874250960569c84869f.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/ubuntu/apps/WillJohnson/releases/20210221012347 )
+  INFO [a9626187] Finished in 0.660 seconds with exit status 0 (successful).
+ DEBUG [906783b0] Running if test ! -d /home/ubuntu/apps/WillJohnson/repo; then echo "Directory does not exist '/home/ubuntu/apps/WillJohnson/repo'" 1>&2; false; fi as ubuntu@99.79.123.96
+ DEBUG [906783b0] Command: if test ! -d /home/ubuntu/apps/WillJohnson/repo; then echo "Directory does not exist '/home/ubuntu/apps/WillJohnson/repo'" 1>&2; false; fi
+ DEBUG [906783b0] Finished in 0.025 seconds with exit status 0 (successful).
+ DEBUG [2dba4056] Running /usr/bin/env git rev-list --max-count=1 master as ubuntu@99.79.123.96
+ DEBUG [2dba4056] Command: cd /home/ubuntu/apps/WillJohnson/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-f874250960569c84869f.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [2dba4056] 	6aff595ab627920a8abac7b048eb0dfc893a2216
+ DEBUG [2dba4056] Finished in 0.086 seconds with exit status 0 (successful).
+ DEBUG [867dff37] Running if test ! -d /home/ubuntu/apps/WillJohnson/releases/20210221012347; then echo "Directory does not exist '/home/ubuntu/apps/WillJohnson/releases/20210221012347'" 1>&2; false; fi as ubuntu@99.79.123.96
+ DEBUG [867dff37] Command: if test ! -d /home/ubuntu/apps/WillJohnson/releases/20210221012347; then echo "Directory does not exist '/home/ubuntu/apps/WillJohnson/releases/20210221012347'" 1>&2; false; fi
+ DEBUG [867dff37] Finished in 0.025 seconds with exit status 0 (successful).
+  INFO [a29f49c3] Running /usr/bin/env echo "6aff595ab627920a8abac7b048eb0dfc893a2216" > REVISION as ubuntu@99.79.123.96
+ DEBUG [a29f49c3] Command: cd /home/ubuntu/apps/WillJohnson/releases/20210221012347 && /usr/bin/env echo "6aff595ab627920a8abac7b048eb0dfc893a2216" > REVISION
+  INFO [a29f49c3] Finished in 0.067 seconds with exit status 0 (successful).
+  INFO [a4a17e04] Running /usr/bin/env mkdir -p /home/ubuntu/apps/WillJohnson/releases/20210221012347/config as ubuntu@99.79.123.96
+ DEBUG [a4a17e04] Command: /usr/bin/env mkdir -p /home/ubuntu/apps/WillJohnson/releases/20210221012347/config
+  INFO [a4a17e04] Finished in 0.027 seconds with exit status 0 (successful).
+ DEBUG [d8c4038c] Running [ -L /home/ubuntu/apps/WillJohnson/releases/20210221012347/config/database.yml ] as ubuntu@99.79.123.96
+ DEBUG [d8c4038c] Command: [ -L /home/ubuntu/apps/WillJohnson/releases/20210221012347/config/database.yml ]
+ DEBUG [d8c4038c] Finished in 0.065 seconds with exit status 1 (failed).
+ DEBUG [5005228e] Running [ -f /home/ubuntu/apps/WillJohnson/releases/20210221012347/config/database.yml ] as ubuntu@99.79.123.96
+ DEBUG [5005228e] Command: [ -f /home/ubuntu/apps/WillJohnson/releases/20210221012347/config/database.yml ]
+ DEBUG [5005228e] Finished in 0.025 seconds with exit status 0 (successful).
+  INFO [a0edf8ab] Running /usr/bin/env rm /home/ubuntu/apps/WillJohnson/releases/20210221012347/config/database.yml as ubuntu@99.79.123.96
+ DEBUG [a0edf8ab] Command: /usr/bin/env rm /home/ubuntu/apps/WillJohnson/releases/20210221012347/config/database.yml
+  INFO [a0edf8ab] Finished in 0.068 seconds with exit status 0 (successful).
+  INFO [fd9fe0d2] Running /usr/bin/env ln -s /home/ubuntu/apps/WillJohnson/shared/config/database.yml /home/ubuntu/apps/WillJohnson/releases/20210221012347/config/database.yml as ubuntu@99.79.123.96
+ DEBUG [fd9fe0d2] Command: /usr/bin/env ln -s /home/ubuntu/apps/WillJohnson/shared/config/database.yml /home/ubuntu/apps/WillJohnson/releases/20210221012347/config/database.yml
+  INFO [fd9fe0d2] Finished in 0.026 seconds with exit status 0 (successful).
+  INFO [19af03cb] Running /usr/bin/env mkdir -p /home/ubuntu/apps/WillJohnson/releases/20210221012347/tmp /home/ubuntu/apps/WillJohnson/releases/20210221012347 /home/ubuntu/apps/WillJohnson/releases/20210221012347/public as ubuntu@99.79.123.96
+ DEBUG [19af03cb] Command: /usr/bin/env mkdir -p /home/ubuntu/apps/WillJohnson/releases/20210221012347/tmp /home/ubuntu/apps/WillJohnson/releases/20210221012347 /home/ubuntu/apps/WillJohnson/releases/20210221012347/public
+  INFO [19af03cb] Finished in 0.067 seconds with exit status 0 (successful).
+ DEBUG [924d2fb5] Running [ -L /home/ubuntu/apps/WillJohnson/releases/20210221012347/tmp/pids ] as ubuntu@99.79.123.96
+ DEBUG [924d2fb5] Command: [ -L /home/ubuntu/apps/WillJohnson/releases/20210221012347/tmp/pids ]
+ DEBUG [924d2fb5] Finished in 0.026 seconds with exit status 1 (failed).
+ DEBUG [2eb556d4] Running [ -d /home/ubuntu/apps/WillJohnson/releases/20210221012347/tmp/pids ] as ubuntu@99.79.123.96
+ DEBUG [2eb556d4] Command: [ -d /home/ubuntu/apps/WillJohnson/releases/20210221012347/tmp/pids ]
+ DEBUG [2eb556d4] Finished in 0.069 seconds with exit status 1 (failed).
+  INFO [e241ce89] Running /usr/bin/env ln -s /home/ubuntu/apps/WillJohnson/shared/tmp/pids /home/ubuntu/apps/WillJohnson/releases/20210221012347/tmp/pids as ubuntu@99.79.123.96
+ DEBUG [e241ce89] Command: /usr/bin/env ln -s /home/ubuntu/apps/WillJohnson/shared/tmp/pids /home/ubuntu/apps/WillJohnson/releases/20210221012347/tmp/pids
+  INFO [e241ce89] Finished in 0.040 seconds with exit status 0 (successful).
+ DEBUG [083cf8bd] Running [ -L /home/ubuntu/apps/WillJohnson/releases/20210221012347/tmp/sockets ] as ubuntu@99.79.123.96
+ DEBUG [083cf8bd] Command: [ -L /home/ubuntu/apps/WillJohnson/releases/20210221012347/tmp/sockets ]
+ DEBUG [083cf8bd] Finished in 0.066 seconds with exit status 1 (failed).
+ DEBUG [ae13d3cf] Running [ -d /home/ubuntu/apps/WillJohnson/releases/20210221012347/tmp/sockets ] as ubuntu@99.79.123.96
+ DEBUG [ae13d3cf] Command: [ -d /home/ubuntu/apps/WillJohnson/releases/20210221012347/tmp/sockets ]
+ DEBUG [ae13d3cf] Finished in 0.025 seconds with exit status 1 (failed).
+  INFO [df515cab] Running /usr/bin/env ln -s /home/ubuntu/apps/WillJohnson/shared/tmp/sockets /home/ubuntu/apps/WillJohnson/releases/20210221012347/tmp/sockets as ubuntu@99.79.123.96
+ DEBUG [df515cab] Command: /usr/bin/env ln -s /home/ubuntu/apps/WillJohnson/shared/tmp/sockets /home/ubuntu/apps/WillJohnson/releases/20210221012347/tmp/sockets
+  INFO [df515cab] Finished in 0.069 seconds with exit status 0 (successful).
+ DEBUG [a303c324] Running [ -L /home/ubuntu/apps/WillJohnson/releases/20210221012347/log ] as ubuntu@99.79.123.96
+ DEBUG [a303c324] Command: [ -L /home/ubuntu/apps/WillJohnson/releases/20210221012347/log ]
+ DEBUG [a303c324] Finished in 0.023 seconds with exit status 1 (failed).
+ DEBUG [ffcc545c] Running [ -d /home/ubuntu/apps/WillJohnson/releases/20210221012347/log ] as ubuntu@99.79.123.96
+ DEBUG [ffcc545c] Command: [ -d /home/ubuntu/apps/WillJohnson/releases/20210221012347/log ]
+ DEBUG [ffcc545c] Finished in 0.065 seconds with exit status 0 (successful).
+  INFO [251ca738] Running /usr/bin/env rm -rf /home/ubuntu/apps/WillJohnson/releases/20210221012347/log as ubuntu@99.79.123.96
+ DEBUG [251ca738] Command: /usr/bin/env rm -rf /home/ubuntu/apps/WillJohnson/releases/20210221012347/log
+  INFO [251ca738] Finished in 0.042 seconds with exit status 0 (successful).
+  INFO [d77418a9] Running /usr/bin/env ln -s /home/ubuntu/apps/WillJohnson/shared/log /home/ubuntu/apps/WillJohnson/releases/20210221012347/log as ubuntu@99.79.123.96
+ DEBUG [d77418a9] Command: /usr/bin/env ln -s /home/ubuntu/apps/WillJohnson/shared/log /home/ubuntu/apps/WillJohnson/releases/20210221012347/log
+  INFO [d77418a9] Finished in 0.072 seconds with exit status 0 (successful).
+ DEBUG [09994cf2] Running [ -L /home/ubuntu/apps/WillJohnson/releases/20210221012347/public/assets ] as ubuntu@99.79.123.96
+ DEBUG [09994cf2] Command: [ -L /home/ubuntu/apps/WillJohnson/releases/20210221012347/public/assets ]
+ DEBUG [09994cf2] Finished in 0.025 seconds with exit status 1 (failed).
+ DEBUG [c7ffe635] Running [ -d /home/ubuntu/apps/WillJohnson/releases/20210221012347/public/assets ] as ubuntu@99.79.123.96
+ DEBUG [c7ffe635] Command: [ -d /home/ubuntu/apps/WillJohnson/releases/20210221012347/public/assets ]
+ DEBUG [c7ffe635] Finished in 0.066 seconds with exit status 1 (failed).
+  INFO [6dea3232] Running /usr/bin/env ln -s /home/ubuntu/apps/WillJohnson/shared/public/assets /home/ubuntu/apps/WillJohnson/releases/20210221012347/public/assets as ubuntu@99.79.123.96
+ DEBUG [6dea3232] Command: /usr/bin/env ln -s /home/ubuntu/apps/WillJohnson/shared/public/assets /home/ubuntu/apps/WillJohnson/releases/20210221012347/public/assets
+  INFO [6dea3232] Finished in 0.044 seconds with exit status 0 (successful).
+ DEBUG [0eb0f9da] Running if test ! -d /home/ubuntu/apps/WillJohnson/releases/20210221012347; then echo "Directory does not exist '/home/ubuntu/apps/WillJohnson/releases/20210221012347'" 1>&2; false; fi as ubuntu@99.79.123.96
+ DEBUG [0eb0f9da] Command: if test ! -d /home/ubuntu/apps/WillJohnson/releases/20210221012347; then echo "Directory does not exist '/home/ubuntu/apps/WillJohnson/releases/20210221012347'" 1>&2; false; fi
+ DEBUG [0eb0f9da] Finished in 0.069 seconds with exit status 0 (successful).
+  INFO [3c4c47c5] Running /usr/bin/env /home/ubuntu/apps/WillJohnson/rvm1scripts/rvm-auto.sh rvm --install install . as ubuntu@99.79.123.96
+ DEBUG [3c4c47c5] Command: cd /home/ubuntu/apps/WillJohnson/releases/20210221012347 && /usr/bin/env /home/ubuntu/apps/WillJohnson/rvm1scripts/rvm-auto.sh rvm --install install .
+ DEBUG [3c4c47c5] 	Warning, new version of rvm available '1.29.12', you are using older version '1.29.9'.
+You can disable this warning with:   echo rvm_autoupdate_flag=0 >> ~/.rvmrc
+You can enable auto-update with:     echo rvm_autoupdate_flag=2 >> ~/.rvmrc
+You can update manually with:        rvm get VERSION                         (e.g. 'rvm get stable')
+
+ DEBUG [3c4c47c5] 	Already installed ruby-2.6.6.
+To reinstall use:
+
+    rvm reinstall ruby-2.6.6
+
+  INFO [3c4c47c5] Finished in 0.528 seconds with exit status 0 (successful).
+  INFO [68f9e046] Running /usr/bin/env git ls-remote https://github.com/tatiana-wag/Rocket_Elevators_Information_System.git HEAD as ubuntu@99.79.123.96
+ DEBUG [68f9e046] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-f874250960569c84869f.sh" ; /usr/bin/env git ls-remote https://github.com/tatiana-wag/Rocket_Elevators_Information_System.git HEAD )
+ DEBUG [68f9e046] 	6aff595ab627920a8abac7b048eb0dfc893a2216	HEAD
+  INFO [68f9e046] Finished in 0.219 seconds with exit status 0 (successful).
+  INFO [b67a4a3e] Running /usr/bin/env mkdir -p /home/ubuntu/apps/WillJohnson/shared /home/ubuntu/apps/WillJohnson/releases as ubuntu@99.79.123.96
+ DEBUG [b67a4a3e] Command: /usr/bin/env mkdir -p /home/ubuntu/apps/WillJohnson/shared /home/ubuntu/apps/WillJohnson/releases
+  INFO [b67a4a3e] Finished in 0.025 seconds with exit status 0 (successful).
+  INFO [5234c1b5] Running /usr/bin/env mkdir -p /home/ubuntu/apps/WillJohnson/shared/tmp/pids /home/ubuntu/apps/WillJohnson/shared/tmp/sockets /home/ubuntu/apps/WillJohnson/shared/log /home/ubuntu/apps/WillJohnson/shared/public/assets as ubuntu@99.79.123.96
+ DEBUG [5234c1b5] Command: /usr/bin/env mkdir -p /home/ubuntu/apps/WillJohnson/shared/tmp/pids /home/ubuntu/apps/WillJohnson/shared/tmp/sockets /home/ubuntu/apps/WillJohnson/shared/log /home/ubuntu/apps/WillJohnson/shared/public/assets
+  INFO [5234c1b5] Finished in 0.067 seconds with exit status 0 (successful).
+  INFO [d5295462] Running /usr/bin/env mkdir -p /home/ubuntu/apps/WillJohnson/shared/config as ubuntu@99.79.123.96
+ DEBUG [d5295462] Command: /usr/bin/env mkdir -p /home/ubuntu/apps/WillJohnson/shared/config
+  INFO [d5295462] Finished in 0.026 seconds with exit status 0 (successful).
+ DEBUG [7fc142df] Running [ -f /home/ubuntu/apps/WillJohnson/shared/config/database.yml ] as ubuntu@99.79.123.96
+ DEBUG [7fc142df] Command: [ -f /home/ubuntu/apps/WillJohnson/shared/config/database.yml ]
+ DEBUG [7fc142df] Finished in 0.066 seconds with exit status 0 (successful).
+ DEBUG [8330a0e2] Running [ -f /home/ubuntu/apps/WillJohnson/shared/puma.rb ] as ubuntu@99.79.123.96
+ DEBUG [8330a0e2] Command: [ -f /home/ubuntu/apps/WillJohnson/shared/puma.rb ]
+ DEBUG [8330a0e2] Finished in 0.025 seconds with exit status 0 (successful).
+ DEBUG [bcec40e7] Running [ -f /home/ubuntu/apps/WillJohnson/releases/20210221012347/REVISION ] as ubuntu@99.79.123.96
+ DEBUG [bcec40e7] Command: [ -f /home/ubuntu/apps/WillJohnson/releases/20210221012347/REVISION ]
+ DEBUG [bcec40e7] Finished in 0.069 seconds with exit status 0 (successful).
+ DEBUG [baf9e95a] Running /usr/bin/env cat /home/ubuntu/apps/WillJohnson/releases/20210221012347/REVISION 2>/dev/null as ubuntu@99.79.123.96
+ DEBUG [baf9e95a] Command: /usr/bin/env cat /home/ubuntu/apps/WillJohnson/releases/20210221012347/REVISION 2>/dev/null
+ DEBUG [baf9e95a] 	6aff595ab627920a8abac7b048eb0dfc893a2216
+ DEBUG [baf9e95a] Finished in 0.026 seconds with exit status 0 (successful).
+ DEBUG [18de4cf2] Running if test ! -d /home/ubuntu/apps/WillJohnson/releases/20210221012347; then echo "Directory does not exist '/home/ubuntu/apps/WillJohnson/releases/20210221012347'" 1>&2; false; fi as ubuntu@99.79.123.96
+ DEBUG [18de4cf2] Command: if test ! -d /home/ubuntu/apps/WillJohnson/releases/20210221012347; then echo "Directory does not exist '/home/ubuntu/apps/WillJohnson/releases/20210221012347'" 1>&2; false; fi
+ DEBUG [18de4cf2] Finished in 0.067 seconds with exit status 0 (successful).
+  INFO [830852b2] Running /home/ubuntu/apps/WillJohnson/rvm1scripts/rvm-auto.sh . bundle config --local deployment true as ubuntu@99.79.123.96
+ DEBUG [830852b2] Command: cd /home/ubuntu/apps/WillJohnson/releases/20210221012347 && /home/ubuntu/apps/WillJohnson/rvm1scripts/rvm-auto.sh . bundle config --local deployment true
+  INFO [830852b2] Finished in 0.879 seconds with exit status 0 (successful).
+  INFO [6f59a41f] Running /home/ubuntu/apps/WillJohnson/rvm1scripts/rvm-auto.sh . bundle config --local path /home/ubuntu/apps/WillJohnson/shared/bundle as ubuntu@99.79.123.96
+ DEBUG [6f59a41f] Command: cd /home/ubuntu/apps/WillJohnson/releases/20210221012347 && /home/ubuntu/apps/WillJohnson/rvm1scripts/rvm-auto.sh . bundle config --local path /home/ubuntu/apps/WillJohnson/shared/bundle
+  INFO [6f59a41f] Finished in 0.928 seconds with exit status 0 (successful).
+  INFO [77ae3a1e] Running /home/ubuntu/apps/WillJohnson/rvm1scripts/rvm-auto.sh . bundle config --local without production as ubuntu@99.79.123.96
+ DEBUG [77ae3a1e] Command: cd /home/ubuntu/apps/WillJohnson/releases/20210221012347 && /home/ubuntu/apps/WillJohnson/rvm1scripts/rvm-auto.sh . bundle config --local without production
+  INFO [77ae3a1e] Finished in 0.713 seconds with exit status 0 (successful).
+ DEBUG [bea315e0] Running if test ! -d /home/ubuntu/apps/WillJohnson/releases/20210221012347; then echo "Directory does not exist '/home/ubuntu/apps/WillJohnson/releases/20210221012347'" 1>&2; false; fi as ubuntu@99.79.123.96
+ DEBUG [bea315e0] Command: if test ! -d /home/ubuntu/apps/WillJohnson/releases/20210221012347; then echo "Directory does not exist '/home/ubuntu/apps/WillJohnson/releases/20210221012347'" 1>&2; false; fi
+ DEBUG [bea315e0] Finished in 0.065 seconds with exit status 0 (successful).
+ DEBUG [3df2fad3] Running /home/ubuntu/apps/WillJohnson/rvm1scripts/rvm-auto.sh . bundle check as ubuntu@99.79.123.96
+ DEBUG [3df2fad3] Command: cd /home/ubuntu/apps/WillJohnson/releases/20210221012347 && /home/ubuntu/apps/WillJohnson/rvm1scripts/rvm-auto.sh . bundle check
+ DEBUG [3df2fad3] 	Warning: the running version of Bundler (2.2.9) is older than the version that created the lockfile (2.2.10). We suggest you to upgrade to the version that created the lockfile by running `gem install bundler:2.2.10`.
+ DEBUG [3df2fad3] 	The following gems are missing
+ * activemodel-serializers-xml (1.0.2)
+ * temple (0.8.2)
+ * haml (5.2.1)
+ * nested_form (0.3.2)
+ * rack-pjax (1.1.0)
+ DEBUG [3df2fad3] 	 * remotipart (1.4.4)
+ * sassc (2.4.0)
+ * sassc-rails (2.1.2)
+ * rails_admin (2.0.2)
+Install missing gems with `bundle install`
+ DEBUG [3df2fad3] Finished in 1.088 seconds with exit status 1 (failed).
+  INFO [89ed7b04] Running /home/ubuntu/apps/WillJohnson/rvm1scripts/rvm-auto.sh . bundle install --jobs 4 --quiet as ubuntu@99.79.123.96
+ DEBUG [89ed7b04] Command: cd /home/ubuntu/apps/WillJohnson/releases/20210221012347 && /home/ubuntu/apps/WillJohnson/rvm1scripts/rvm-auto.sh . bundle install --jobs 4 --quiet
+ DEBUG [89ed7b04] 	You are trying to install in deployment mode after changing
+your Gemfile. Run `bundle install` elsewhere and add the
+updated Gemfile.lock to version control.
+
+If this is a development machine, remove the
+/home/ubuntu/apps/WillJohnson/releases/20210221012347/Gemfile freeze
+by running `bundle config unset deployment`.
+
+The dependencies in your gemfile changed
+
+You have added to the Gemfile:
+* capistrano (~> 3.11.0)
+
+You have deleted from the Gemfile:
+* capistrano (~> 3.10)
