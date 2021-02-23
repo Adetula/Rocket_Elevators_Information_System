@@ -13,7 +13,7 @@ class LeadsController < ApplicationController
         leads.project_description_leads= params[:project_description_leads]
         leads.department= params[:department]
         leads.message_leads= params[:message_leads]
-        leads.attachment_file_leads= params[:attachment_file_leads]
+        leads.workfile.attach(params[:workfile])
         leads.save!
     end
     def leads_

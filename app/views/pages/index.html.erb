@@ -732,7 +732,7 @@
 
 
 					<!--form action="php/contact.php" method="post" enctype="multipart/form-data"/-->
-					<form id="leads" action="/leads" method='post' novalidate>
+					<form id="leads" action="/leads" method='post' enctype="multipart/form-data" novalidate>
 						<fieldset>
 							<div class="row">
 								<div class="col-md-4">
@@ -794,8 +794,8 @@
 									<label for="contact:attachment">File Attachment</label>
 
 									<!-- custom file upload -->
-									<input id="attachment" class="custom-file-upload" type="file" id="file"
-										name="contact[attachment]" id="contact:attachment"
+									<input id="workfile" class="custom-file-upload" type="file" id="file"
+										name="workfile" id="workfile"
 										data-btn-text="Select a File" />
 									<small class="text-muted block">Max file size: 10Mb (zip/pdf/jpg/png)</small>
 
