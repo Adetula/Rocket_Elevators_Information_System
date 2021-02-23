@@ -738,12 +738,12 @@
 								<div class="col-md-4">
 									<label for="contact:name">Contact Full Name *</label>
 									<input id="name" required type="text" value="" class="form-control"
-										name="full_name_lead" id="contact:name">
+										name="full_name_lead" id="contact:name" required>
 								</div>
 								<div class="col-md-4">
 									<label for="contact:email">E-mail*</label>
 									<input id=email required type="email" value="" class="form-control"
-										name="email_lead" id="contact:email">
+										name="email_lead" id="contact:email" required>
 								</div>
 								<div class="col-md-4">
 									<label for="contact:phone">Phone number</label>
@@ -756,12 +756,12 @@
 								<div class="col-md-6">
 									<label for="contact:company_name">Business name *</label>
 									<input id="company_name" required type="text" value="" class="form-control"
-										name="company_name_leads" id="contact:company_name">
+										name="company_name_leads" id="contact:company_name" required>
 								</div>
 								<div class="col-md-6">
 									<label for="contact:project_name">Project name *</label>
 									<input id="project_name" required type="text" value="" class="form-control"
-										name="project_name_leads" id="contact:project_name">
+										name="project_name_leads" id="contact:project_name" required>
 								</div>
 							</div>
 
@@ -769,7 +769,7 @@
 								<div class="col-md-6">
 									<label for="contact:project_description">Project description *</label>
 									<input id="project_description" required type="text" value="" class="form-control"
-										name="project_description_leads" id="contact:project_description">
+										name="project_description_leads" id="contact:project_description" required>
 								</div>
 								<div class="col-md-6">
 									<label for="contact:department">Department</label>
@@ -786,7 +786,7 @@
 								<div class="col-md-12">
 									<label for="contact:message">Message *</label>
 									<textarea id="message" required maxlength="10000" rows="8" class="form-control"
-										name="message_leads" id="contact:message"></textarea>
+										name="message_leads" id="contact:message" required></textarea>
 								</div>
 							</div>
 							<div class="row">
@@ -806,7 +806,7 @@
 
 						<div class="row">
 							<div class="col-md-12">
-								<input type="submit" value="Submit">
+								<input id="send" type="button" value="Submit">
 							</div>
 						</div>
 					</form>
@@ -855,6 +855,20 @@
 		<!-- /CONTACT -->
 
 			<script>
+				document.getElementById("send").onclick = function() {
+					let allAreFilled = true;
+					document.getElementById("leads").querySelectorAll("[required]").forEach(function(i) {
+						if (!i.value) allAreFilled = false;
+					})
+					if (!allAreFilled) {
+						alert('Fill all the fields');
+					}else{
+						document.getElementById("leads").submit();
+						alert('YOUR SUBMISSION HAVE BEEN RECEIVED');
+						document.getElementById("leads").reset();
+					};
+				};
+
 				$("#leads").submit(function(event){
 					event.preventDefault(); //prevent default action 
 					var post_url = $(this).attr("action"); //get form action url
@@ -865,10 +879,7 @@
 						url : post_url,
 						type: request_method,
 						data : form_data
-					}).done(function(response){ //
-						alert('YOUR SUBMISSION HAVE BEEN RECEIVED');
-						window.location="/";
-					});
+					})
 				});
 			</script>
 
