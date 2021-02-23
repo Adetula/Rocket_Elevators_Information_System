@@ -732,22 +732,22 @@
 
 
 					<!--form action="php/contact.php" method="post" enctype="multipart/form-data"/-->
-					<form>
+					<form id="leads" action="/leads" method='post' novalidate>
 						<fieldset>
 							<div class="row">
 								<div class="col-md-4">
 									<label for="contact:name">Contact Full Name *</label>
 									<input id="name" required type="text" value="" class="form-control"
-										name="contact[name][required]" id="contact:name">
+										name="full_name_lead" id="contact:name">
 								</div>
 								<div class="col-md-4">
 									<label for="contact:email">E-mail*</label>
 									<input id=email required type="email" value="" class="form-control"
-										name="contact[email][required]" id="contact:email">
+										name="email_lead" id="contact:email">
 								</div>
 								<div class="col-md-4">
 									<label for="contact:phone">Phone number</label>
-									<input id="phone" type="text" value="" class="form-control" name="contact[phone]"
+									<input id="phone" type="text" value="" class="form-control" name="phone_lead"
 										id="contact:phone">
 								</div>
 							</div>
@@ -756,12 +756,12 @@
 								<div class="col-md-6">
 									<label for="contact:company_name">Business name *</label>
 									<input id="company_name" required type="text" value="" class="form-control"
-										name="contact[company_name][required]" id="contact:company_name">
+										name="company_name_leads" id="contact:company_name">
 								</div>
 								<div class="col-md-6">
 									<label for="contact:project_name">Project name *</label>
 									<input id="project_name" required type="text" value="" class="form-control"
-										name="contact[project_name][required]" id="contact:project_name">
+										name="project_name_leads" id="contact:project_name">
 								</div>
 							</div>
 
@@ -769,7 +769,7 @@
 								<div class="col-md-6">
 									<label for="contact:project_description">Project description *</label>
 									<input id="project_description" required type="text" value="" class="form-control"
-										name="contact[proyect_description][required]" id="contact:project_description">
+										name="project_description_leads" id="contact:project_description">
 								</div>
 								<div class="col-md-6">
 									<label for="contact:department">Department</label>
@@ -786,7 +786,7 @@
 								<div class="col-md-12">
 									<label for="contact:message">Message *</label>
 									<textarea id="message" required maxlength="10000" rows="8" class="form-control"
-										name="contact[message]" id="contact:message"></textarea>
+										name="message_leads" id="contact:message"></textarea>
 								</div>
 							</div>
 							<div class="row">
@@ -806,8 +806,7 @@
 
 						<div class="row">
 							<div class="col-md-12">
-								<button type="submit" class="btn btn-blue"><i class="fa fa-check"></i> SEND
-									MESSAGE</button>
+								<input type="submit" value="Submit">
 							</div>
 						</div>
 					</form>
@@ -854,4 +853,22 @@
 			</div>
 		</section>
 		<!-- /CONTACT -->
+
+			<script>
+				$("#leads").submit(function(event){
+					event.preventDefault(); //prevent default action 
+					var post_url = $(this).attr("action"); //get form action url
+					var request_method = $(this).attr("method"); //get form GET/POST method
+					var form_data = $(this).serialize(); //Encode form elements for submission
+					
+					$.ajax({
+						url : post_url,
+						type: request_method,
+						data : form_data
+					}).done(function(response){ //
+						alert('YOUR SUBMISSION HAVE BEEN RECEIVED');
+						window.location="/";
+					});
+				});
+			</script>
 
