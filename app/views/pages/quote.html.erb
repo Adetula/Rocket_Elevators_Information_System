@@ -244,25 +244,29 @@
 					})
 					checkType = $("#building_type").children("option:selected").val();
 					switch(checkType) {
-						case "":
-							alert ("Please select a Building Type");
-							allAreFilled = false;
-						case "residential":
+						case "residential" :
 							if ($("#numApp").val() =="" || $("#numFloors_re").val() =="" || $("#numBasements_re").val() =="" ){
 								allAreFilled = false;
 							}
+							break;
 						case "commercial" :
 							if ($("#numBusinesses_com").val() =="" || $("#numFloors_com").val() =="" || $("#numBasements_com").val() =="" || $("#numParking_com").val() =="" || $("#numShafts").val() ==""){
 								allAreFilled = false;
 							}
+							break;
 						case "corporate" :
 							if ($("#numCompanies").val() =="" || $("#numFloors_co").val() =="" || $("#numBasements_co").val() =="" || $("#numParking_co").val() =="" || $("#numMaxOccupants_co").val() ==""){
 								allAreFilled = false;
 							}
+							break;
 						case "hybrid" :
 							if ($("#numBusinesses_hy").val() =="" || $("#numFloors_hy").val() =="" || $("#numBasements_hy").val() =="" || $("#numParking_hy").val() =="" || $("#numMaxOccupants_hy").val() =="" || $("#numHoursAct").val() ==""){
 								allAreFilled = false;
 							}
+							break;
+						default :
+							alert ("Please select a Building Type");
+							allAreFilled = false
 						
 					}
 					if (!allAreFilled  ) {
