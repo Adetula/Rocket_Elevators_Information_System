@@ -150,7 +150,6 @@ ActiveRecord::Schema.define(version: 2021_02_23_231739) do
     t.string "project_description_leads"
     t.string "department"
     t.text "message_leads"
-    t.binary "attachment_file_leads", limit: 16777215
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
