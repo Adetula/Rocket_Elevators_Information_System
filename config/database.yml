@@ -49,6 +49,24 @@ test:
 #
 production:
   <<: *default
-  database: rocket_production
-  username: rocket
-  password: <%= ENV['ROCKET_DATABASE_PASSWORD'] %>
+  
+production:
+  primary:
+    database: rocket_production
+    user: root
+    adapter: mysql
+  primary_replica:
+    database: rocket_production
+    user: postgres
+    adapter: postgres
+    replica: true
+  postgres:
+    database: rocket_development
+    user: postgres
+    adapter: postgres
+    migrations_paths: db/postgres_migrate
+  postgres_replica:
+    database: rocket_development
+    user: postgres_readonly
+    adapter: postgres
+    replica: true
