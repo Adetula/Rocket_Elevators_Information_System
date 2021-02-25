@@ -9,7 +9,6 @@ class CreateLeads < ActiveRecord::Migration[5.2]
       t.string :project_description_leads
       t.string :department
       t.text :message_leads
-      t.binary :attachment_file_leads, limit: 2.megabytes 
       t.timestamps
     end
   end

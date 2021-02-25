@@ -8,17 +8,16 @@
 /.bundle
 
 # Ignore all logfiles and tempfiles.
-/log/*
-/tmp/*
-!/log/.keep
-!/tmp/.keep
+log/*
+tmp/*
+log/*
 
 # Ignore uploaded files in development
-/storage/*
+storage/*
 !/storage/.keep
 
-/node_modules
-/yarn-error.log
+node_modules
+yarn-error.log
 
 
 
@@ -26,5 +25,5 @@
 .byebug_history
 
 # Ignore master key for decrypting credentials and more.
-/config/master.key
-/config/database.yml
+config/master.key
+config/database.yml
