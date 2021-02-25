@@ -26,7 +26,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+gem 'json'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
@@ -72,9 +72,9 @@ gem 'bootstrap-sass', '~> 3.3.4'
 gem 'font-awesome-sass', '~> 4.7.0'
 gem 'jquery-ui-rails'
 gem 'bootstrap-social-rails'
-
+gem 'faker'
 gem 'devise'
-
+gem 'csv'
 gem 'ed25519', '~> 1.2' 
 gem 'bcrypt_pbkdf', '~>1' 
 gem 'rails_admin', '~> 2.0'
