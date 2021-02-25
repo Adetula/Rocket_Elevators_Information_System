@@ -14,12 +14,24 @@ default: &default
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
-  password: Codeboxx1!
-  socket: /var/run/mysqld/mysqld.sock
+  password: 
+  socket: /tmp/mysql.sock
+  # password: Codeboxx1!
+  # socket: /var/run/mysqld/mysqld.sock
 
-development:
+default: &postgresql
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  
+
+  development:
   <<: *default
   database: rocket_development
+
+  development:
+  <<: *postgresql
+  database: dwh_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -27,6 +39,10 @@ development:
 test:
   <<: *default
   database: rocket_test
+
+ test:
+  <<: *postgresql
+  database: dwh_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -47,26 +63,39 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-production:
-  <<: *default
+# production:
+#   <<: *default
   
-production:
-  primary:
-    database: rocket_production
-    user: root
-    adapter: mysql
-  primary_replica:
-    database: rocket_production
-    user: postgres
-    adapter: postgres
-    replica: true
-  postgres:
-    database: rocket_development
-    user: postgres
-    adapter: postgres
-    migrations_paths: db/postgres_migrate
-  postgres_replica:
-    database: rocket_development
-    user: postgres_readonly
-    adapter: postgres
-    replica: true
+# production:
+#   primary:
+#     database: rocket_production
+#     user: root
+#     adapter: mysql
+#   primary_replica:
+#     database: rocket_production
+#     user: postgres
+#     adapter: postgres
+#     replica: true
+#   postgres:
+#     database: rocket_development
+#     user: postgres
+#     adapter: postgres
+#     migrations_paths: db/postgres_migrate
+#   postgres_replica:
+#     database: rocket_development
+#     user: postgres_readonly
+#     adapter: postgres
+#     replica: true
+
+
+dwh_development:
+  <<: *default
+  database: dwh_development
+
+dwh_test:
+  <<: *default
+  database: dwh_test
+
+dwh_production:
+  <<: *default
+  url: <%= ENV['DWH_DATABASE_URL'] %>
