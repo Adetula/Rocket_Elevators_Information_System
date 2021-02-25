@@ -64,8 +64,8 @@ ActiveRecord::Schema.define(version: 2021_02_23_231739) do
 
   create_table "building_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "building_id"
-    t.string "information_key"
-    t.string "value"
+    t.string "building_details_information_key"
+    t.string "building_details_value"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["building_id"], name: "index_building_details_on_building_id"
@@ -88,11 +88,11 @@ ActiveRecord::Schema.define(version: 2021_02_23_231739) do
 
   create_table "columns", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "battery_id"
-    t.string "building_type"
-    t.integer "floors_served"
-    t.string "status"
-    t.text "information"
-    t.text "notes"
+    t.string "column_building_type"
+    t.integer "column_floors_served"
+    t.string "column_status"
+    t.text "column_information"
+    t.text "column_notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["battery_id"], name: "index_columns_on_battery_id"

@@ -107,8 +107,8 @@ puts "Creating Building Details"
    dateCreationUpdate = Faker::Date.between(from: '2018-09-01', to: '2021-02-20')
    BuildingDetail.create!(
       building_id: Faker::Number.between(from: 1, to: 93),
-      information_key: "date of construction",
-      value: Faker::Date.between(from: '1989-01-01', to: '2020-01-01')
+      building_details_information_key: "date of construction",
+      building_details_value: Faker::Date.between(from: '1989-01-01', to: '2020-01-01')
    )
 end
 
@@ -124,8 +124,8 @@ puts "Creating Battery"
       battery_date_of_commission:Faker::Date.between(from:'2018-01-13', to:'2021-01-15'),
       battery_date_of_last_inspection:Faker::Date.between(from:'2020-01-13', to:'2021-01-15'),
       battery_certificate_of_operations: Faker::Crypto.md5,
-      battery_information: "Add information here",
-      battery_notes: "Add information here"
+      battery_information: "",
+      battery_notes: ""
    )
 end
 
@@ -136,11 +136,11 @@ puts "Creating Column"
    dateCreationUpdate = Faker::Date.between(from: '2018-09-01', to: '2021-02-20')
    Column.create!(
       battery_id: Faker::Number.between(from: 1, to: 50),
-      building_type:["Residential", "Commercial", "Corporate","Hybrid"].sample,
-      floors_served: Faker::Number.between(from: 2, to: 100),
-      status: "",
-      information: "Add information here",
-      notes: "Add information here"
+      column_building_type:["Residential", "Commercial", "Corporate","Hybrid"].sample,
+      column_floors_served: Faker::Number.between(from: 2, to: 100),
+      column_status: ["Active", "Intervention", "Inactive"].sample,
+      column_information: "",
+      column_notes: ""
 
    )
 end
@@ -155,12 +155,12 @@ puts "Creating Elevator"
       elevator_serial_number: Faker::Device.serial,
       elevator_model: ["Standard", "Premium" , "Excelium"].sample,
       elevator_type: ["Residential", "Commercial", "Corporate", "Hybrid"].sample,
-      elevator_status: "",
+      elevator_status: ["Active", "Intervention", "Inactive"].sample,
       elevator_date_of_commissioning: Faker::Date.between(from: '2018-01-01', to: '2020-01-01'),
       elevator_date_of_last_inspection:Faker::Date.between(from: '2020-01-01', to: '2021-01-01'),
       elevator_certificate_of_inspection: Faker::Crypto.md5,
-      elevator_information: "Add information here",
-      elevator_notes: "Add information here"
+      elevator_information: "",
+      elevator_notes: ""
 
    )
 end
