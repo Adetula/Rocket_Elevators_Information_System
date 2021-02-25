@@ -78,6 +78,4 @@ gem 'csv'
 gem 'ed25519', '~> 1.2' 
 gem 'bcrypt_pbkdf', '~>1' 
 gem 'rails_admin', '~> 2.0'
-
-
-gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+gem 'pg'
