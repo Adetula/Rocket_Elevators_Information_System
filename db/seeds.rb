@@ -123,7 +123,7 @@ puts "Creating Battery"
       employee_id: Faker::Number.between(from: 1, to: 7),
       battery_date_of_commission:Faker::Date.between(from:'2018-01-13', to:'2021-01-15'),
       battery_date_of_last_inspection:Faker::Date.between(from:'2020-01-13', to:'2021-01-15'),
-      battery_certificate_of_operations: Faker::Crypto.md5,
+      battery_certificate_of_operations: Faker::Code.asin,
       battery_information: "",
       battery_notes: ""
    )
@@ -152,13 +152,13 @@ puts "Creating Elevator"
    dateCreationUpdate = Faker::Date.between(from: '2018-09-01', to: '2021-02-20')
    Elevator.create!(
       column_id: Faker::Number.between(from: 1, to: 100),
-      elevator_serial_number: Faker::Device.serial,
+      elevator_serial_number: Faker::Code.asin,
       elevator_model: ["Standard", "Premium" , "Excelium"].sample,
       elevator_type: ["Residential", "Commercial", "Corporate", "Hybrid"].sample,
       elevator_status: ["Active", "Intervention", "Inactive"].sample,
       elevator_date_of_commissioning: Faker::Date.between(from: '2018-01-01', to: '2020-01-01'),
       elevator_date_of_last_inspection:Faker::Date.between(from: '2020-01-01', to: '2021-01-01'),
-      elevator_certificate_of_inspection: Faker::Crypto.md5,
+      elevator_certificate_of_inspection: Faker::Code.asin,
       elevator_information: "",
       elevator_notes: ""
 
