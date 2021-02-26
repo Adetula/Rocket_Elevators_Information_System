@@ -1,1 +1,2 @@
-SELECT to_char(dwh_creation_at, 'Month') AS Month, to_char(dwh_creation_at, 'YYYY') AS "Year",COUNT(*) FROM fact_quotes group by 1, 2
+SELECT to_char(creation_date, 'YYYY-MM') as "Month",count(contact_id) as ContactPerMonth
+  FROM fact_contacts
