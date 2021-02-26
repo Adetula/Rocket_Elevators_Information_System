@@ -104,7 +104,7 @@ end
    totalPrice = unitPrice * numElevators
    instalFee = totalPrice * fee
    Quote.create!(
-      name: Faker::Name.name,
+      name: Faker::Company.name,
       email_quote: Faker::Internet.email,
       phone: Faker::PhoneNumber.cell_phone,
       building_type: buildingType,
