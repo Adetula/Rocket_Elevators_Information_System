@@ -1,4 +1,4 @@
-## <img src="https://raw.githubusercontent.com/tatiana-wag/Rocket_Elevators_Information_System/master/public/RocketElevators.jpg">
+## <p align='center'><img src="https://raw.githubusercontent.com/tatiana-wag/Rocket_Elevators_Information_System/master/public/RocketElevators.jpg"></p>
 # 🏆 Project Description
 
 ---
@@ -15,17 +15,18 @@ An "Employees" table that allows you to reserve a section of the site only to au
 
 ---
 
-#The table will collect the following fields at first to designate an employee:
-<p>
+<p align='center'>
+The table will collect the following fields at first to designate an employee:
+<p align='center'>
  User ID -
  Last Name -
  First name -
  Title or Function
 </p>
-<p>
+<p align='center'>
   The following officers were added as principal staff of the organization with login privileges:
 </p>
-<table>
+<table align='center'>
   <tr>
     <th>first_name</th>
     <th>last_name</th>
@@ -76,9 +77,9 @@ An "Employees" table that allows you to reserve a section of the site only to au
   </tr>
 </table>
 
-The default password is ❌ 012345 ❌
+<p align='center'>The default password is ❌ 012345 ❌</p>
 
-An example is shown below
+<p align='center'>An example is shown below</p>
 
 ```
 {
