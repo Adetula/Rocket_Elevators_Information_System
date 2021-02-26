@@ -1,19 +1,19 @@
 ## <img src="https://raw.githubusercontent.com/tatiana-wag/Rocket_Elevators_Information_System/master/public/RocketElevators.jpg">
 # 🏆 Project Description
-<p>
-  <img src="https://raw.githubusercontent.com/tatiana-wag/Rocket_Elevators_Information_System/master/public/RocketIcon.png" width="280px" align="right">
-</p>
 
 ---
 
-
 This exercise is for the Week 5 of the "Odyssey" program offered by CodeBoxx. The main goal of the week is to transform the static site previously developed during the Genesis program and turn it into a web application on MVC (Model - View - Controller) foundations. This is the first introduction to Ruby on Rails framework. The site must be in a state that allows you to create a new section that saves the Javascript form that calculates an estimate in the form of a purchase order. This purchase order includes the key elements of the estimation form and allows you to enter more details.
+
+---
 
 # 💾 A database that allows the storage of the submission form 
 The team must deploy a MySQL database within their common development environment.
 A table "Quotes" that allows you to save the forms filled out on the site and eventually turn them into prospects. This table must persist all required fields.
 A "Users" table that allows users to authenticate. This table is responsible for keeping authentication data such as email, encrypted password, token, etc.
 An "Employees" table that allows you to reserve a section of the site only to authenticated users. When a user authenticates, he is attached to an "Employee" profile and has access to information specific to him. 
+
+---
 
 #The table will collect the following fields at first to designate an employee:
 <p>
@@ -87,6 +87,8 @@ password: 012345
 }
 ```
 
+---
+
 Adding an Administrative Section to the Site (Backoffice)
 The backoffice of the site is secured behind an authentication page that is validated using the Users table.
 The List of Quotes contained in the table must be accessible in a section of the BackOffice.
@@ -104,9 +106,8 @@ Database initialization - ```rake db:seed```
 
 
 # 👥 Contributors
-https://github.com/WillJacct - Will Johnson
 
-https://github.com/tatiana-wag - Tatiana Ramirez
+https://github.com/tatiana-wag - Tatiana Ramirez - Team Leader
 
 https://github.com/Adetula - Muyiwa Adetula
 
@@ -114,3 +115,6 @@ https://github.com/TJWever - Timothy Wever
 
 https://github.com/dondong1 - Don Nguyen
 
+https://github.com/Felix-Masse - Felix Masse
+
+https://github.com/WillJacct - Will Johnson
