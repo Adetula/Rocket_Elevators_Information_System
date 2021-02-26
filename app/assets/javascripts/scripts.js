@@ -3655,6 +3655,45 @@
 	}
 
 
+/** Chart
+ **************************************************************** **/
+function _charts() {
+
+	/** Easy Pie Chart 
+	 ************************* **/
+	var _container = jQuery(".piechart");
+
+	if(_container.length > 0) {
+
+		loadScript(plugin_path + 'chart.easypiechart/dist/jquery.easypiechart.min.js', function() {
+
+			jQuery(".piechart").each(function() {
+				var _t = jQuery(this),
+					_size 		= _t.attr('data-size') || 150,
+					_animate 	= _t.attr('data-animate') || "3000";
+
+				_t.easyPieChart({
+					size: 			_size,
+					animate: 		_animate,
+					scaleColor: 	false,
+					trackColor: 	_t.attr('data-trackcolor') || 'rgba(0,0,0,0.04)',
+					lineWidth: 		_t.attr('data-width') || '2',
+					lineCap: 		'square',
+					barColor: 		_t.attr('data-color') || '#0093BF'
+				});
+
+				/* fix element positioning */
+				jQuery("*", this).attr('style', "line-height:"+_size+"px !important; height:"+_size+"px !important; width:"+_size+"px !important");
+
+			});
+	
+		});
+
+	}
+
+	
+}
+
 
 
 

@@ -17,6 +17,17 @@ default: &default
   password: Codeboxx1!
   socket: /var/run/mysqld/mysqld.sock
 
+default: &dwh_default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see Rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  migrations_paths: db/dwh/migrate
+
+
+
+
 development:
   <<: *default
   database: rocket_development

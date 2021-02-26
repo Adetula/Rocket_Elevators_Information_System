@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   get "/"  => "pages#index"
 
   post "index" => "leads#create"
+
+  get '/chart' =>'charts#chart'
   
   root to:'pages#index'
 
