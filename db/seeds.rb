@@ -373,6 +373,7 @@ address_list=[
         {
             "address1": "8 Watkins Road",
             "address2": "",
+            "city": "Milton",
             "state": "VT",
             "postalCode": "05468",
             "coordinates": {
@@ -735,6 +736,7 @@ address_list=[
         {
             "address1": "9 Brooklyn Street",
             "address2": "",
+            "city": "Morristown",
             "state": "VT",
             "postalCode": "05488",
             "coordinates": {
@@ -1812,6 +1814,7 @@ address_list=[
         {
             "address1": "3 Southerberry Drive",
             "address2": "",
+            "city": "Milton",
             "state": "VT",
             "postalCode": "05468",
             "coordinates": {
@@ -2393,7 +2396,7 @@ address_list.each do |a|
          )
       end
 
-      rand(6).times do |i|
+      rand(1..3).times do |i|
          dateOfCommission = Faker::Date.between(from: dateCreated, to:'2021-01-15')
          battery = Battery.create!(
             building_id: building[:id],
@@ -2407,7 +2410,7 @@ address_list.each do |a|
             created_at:dateCreated
          )
 
-         rand(4).times do |m|
+         rand(1..4).times do |m|
             column = Column.create!(
                battery_id: battery [:id],
                column_building_type:buildingType,
@@ -2418,7 +2421,7 @@ address_list.each do |a|
                created_at:dateCreated
             )
 
-            rand(5).times do |z|
+            rand(1..5).times do |z|
                Elevator.create!(
                   column_id: column[:id],
                   elevator_serial_number: Faker::Code.asin,
