@@ -14,24 +14,24 @@ default: &default
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
-  password: 
-  socket: /tmp/mysql.sock
   # password: Codeboxx1!
   # socket: /var/run/mysqld/mysqld.sock
+  password: 
+  socket: /tmp/mysql.sock
 
-default: &postgresql
+
+default: &dwh_default
   adapter: postgresql
   encoding: unicode
+  # For details on connection pooling, see Rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  
+  migrations_paths: db/dwh/migrate
 
-  development:
+
+development:
   <<: *default
   database: rocket_development
-
-  development:
-  <<: *postgresql
-  database: dwh_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -39,10 +39,6 @@ default: &postgresql
 test:
   <<: *default
   database: rocket_test
-
- test:
-  <<: *postgresql
-  database: dwh_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -63,39 +59,20 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-# production:
-#   <<: *default
-  
-# production:
-#   primary:
-#     database: rocket_production
-#     user: root
-#     adapter: mysql
-#   primary_replica:
-#     database: rocket_production
-#     user: postgres
-#     adapter: postgres
-#     replica: true
-#   postgres:
-#     database: rocket_development
-#     user: postgres
-#     adapter: postgres
-#     migrations_paths: db/postgres_migrate
-#   postgres_replica:
-#     database: rocket_development
-#     user: postgres_readonly
-#     adapter: postgres
-#     replica: true
-
-
-dwh_development:
+production:
   <<: *default
+  database: rocket_production
+  username: rocket
+  password: <%= ENV['ROCKET_DATABASE_PASSWORD'] %>
+  
+dwh_development:
+  <<: *dwh_default
   database: dwh_development
 
 dwh_test:
-  <<: *default
+  <<: *dwh_default
   database: dwh_test
 
 dwh_production:
-  <<: *default
+  <<: *dwh_default
   url: <%= ENV['DWH_DATABASE_URL'] %>

@@ -1,0 +1,1 @@
+SELECT to_char(dwh_commission_date, 'Month') AS Month, to_char(dwh_commission_date, 'YYYY') AS "Year",COUNT(*) FROM fact_elevators group by 1, 2
