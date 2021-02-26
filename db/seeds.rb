@@ -21,7 +21,6 @@ Employee.create!({"last_name"=> "Carrier","first_name"=> "Thomas",  "title"=> "E
 
 
 100.times do
-   dateCreationUpdate = Faker::Date.between(from: '2018-09-01', to: '2021-02-20')
    Lead.create!(
       full_name_lead: Faker::Name.name,
       email_lead: Faker::Internet.email,
@@ -30,8 +29,8 @@ Employee.create!({"last_name"=> "Carrier","first_name"=> "Thomas",  "title"=> "E
       project_name_leads: Faker::Name.name,
       project_description_leads: Faker::Company.buzzword,
       department: Faker::Company.industry,
-      message_leads: Faker::Lorem.sentence(word_count: 8, supplemental: true, random_words_to_add: 8)
-
+      message_leads: Faker::Lorem.sentence(word_count: 8, supplemental: true, random_words_to_add: 8),
+      created_at: Faker::Date.between(from: '2018-09-01', to: '2021-02-20')
    )
 end
 
@@ -104,7 +103,7 @@ end
    totalPrice = unitPrice * numElevators
    instalFee = totalPrice * fee
    Quote.create!(
-      name: Faker::Name.name,
+      name: Faker::Company.name,
       email_quote: Faker::Internet.email,
       phone: Faker::PhoneNumber.cell_phone,
       building_type: buildingType,

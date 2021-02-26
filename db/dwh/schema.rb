@@ -10,17 +10,48 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_26_015128) do
+ActiveRecord::Schema.define(version: 2021_02_26_030654) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "dim_customers", force: :cascade do |t|
+    t.string "dwh_customer_creation_date"
+    t.string "dwh_customer_company_name"
+    t.string "dwh_customer_company_contact"
+    t.string "dwh_customer_company_email"
+    t.integer "nb_elevators"
+    t.string "customer_city"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "fact_contacts", force: :cascade do |t|
+    t.integer "dwh_contact_id"
+    t.datetime "dwh_created_at"
+    t.string "dwh_company_name"
+    t.string "dwh_email"
+    t.string "dwh_project_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "fact_elevators", force: :cascade do |t|
+    t.string "dwh_serial_number"
+    t.datetime "dwh_commission_date"
+    t.integer "dwh_building_id"
+    t.integer "dwh_customer_id"
+    t.string "dwh_building_city"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "fact_quotes", force: :cascade do |t|
-    t.integer "quote_id"
-    t.datetime "quote_creation_at"
-    t.string "name"
-    t.string "email_quote"
-    t.string "elevators_required"
+    t.integer "dwh_quote_id"
+    t.datetime "dwh_creation_at"
+    t.string "dwh_company_name"
+    t.string "dwh_email"
+    t.string "dwh_elevators_required"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
