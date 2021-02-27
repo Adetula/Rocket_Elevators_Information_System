@@ -89,6 +89,7 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
+    chartkick (3.4.2)
     childprocess (3.0.0)
     chromedriver-helper (2.1.1)
       archive-zip (~> 0.10)
@@ -122,6 +123,8 @@ GEM
     haml (5.2.1)
       temple (>= 0.8.0)
       tilt
+    highcharts-rails (6.0.3)
+      railties (>= 3.1)
     i18n (1.8.9)
       concurrent-ruby (~> 1.0)
     io-like (0.3.1)
@@ -312,6 +315,7 @@ DEPENDENCIES
   capistrano-rails (~> 1.4)
   capistrano3-puma
   capybara (>= 2.15)
+  chartkick
   chromedriver-helper
   coffee-rails (~> 4.2)
   csv
@@ -319,6 +323,7 @@ DEPENDENCIES
   ed25519 (~> 1.2)
   faker
   font-awesome-sass (~> 4.7.0)
+  highcharts-rails
   jbuilder (~> 2.5)
   jquery-ui-rails
   json

@@ -22,6 +22,8 @@
 //= require bootstrap
 //= require activestorage
 //= require_tree .
+//= require highcharts
+//= require chartkick
 
 
 
