@@ -1,7 +1,7 @@
 class ChartsController < ApplicationController
     before_action :authenticate_user!
     def chart
-        conn = PG::Connection.open( host: "localhost", user: "root", password: "xybas688", dbname: "dwh_development")
+        conn = PG::Connection.open( host: "localhost", user: "postgres", password: "", dbname: "dwh_development")
         @data1 = conn.exec("select concat(to_char(to_timestamp (extract(month from dwh_created_at)::text, 'MM'), 'TMMonth'), ' ', extract(year from dwh_created_at)) as MonthYearStr, count(*) as Nbcontact, concat(extract(year from dwh_created_at),' ', to_char(to_timestamp (extract(month from dwh_created_at)::text, 'MM'), 'TMMM')) as YearMonthInt from fact_contacts group by MonthYearStr, YearMonthInt order by YearMonthInt;") 
         @x1 = @data1.column_values(0)
         @y1 = @data1.column_values(1)
